@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary scratch scripts
+*.py
+*.txt
+*.bat
+
+# Keep web assets
+!server.py
+!start_web.bat
+
+# Raw sources & extracted
+raw_sources/
+extracted_docx_images/
+enriched_questions.json
+merged_questions.json

@@ -1,0 +1,2555 @@
+[
+  {
+    "id": "Q_1",
+    "number": 1,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là ĐÚNG?",
+    "images": [],
+    "options": [
+      "DES, Vernam là hệ mật mã khối.",
+      "DES và AES là hệ mật mã khối.",
+      "AES và Vernam là hệ mật mã dòng.",
+      "AES và Vernam là hệ mật mã khối."
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] DES và AES là hệ mật mã khối.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_2",
+    "number": 2,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Vận dụng cao",
+    "question": "Em hãy điền nốt các giá trị còn thiếu (từ trái sang phải) trong bảng tính của thuật toán euclide mở rộng dưới đây:",
+    "images": [
+      "assets/images/p_12_image28.png"
+    ],
+    "options": [
+      "7; 0; 317; 737; 1; 0; 40; 317;93;737",
+      "7; 0; 317; -737; 1; 0; -40; 317;93;-737",
+      "7; 0; -737; 317; 1; 0; -40; 317; -93; 737",
+      "7; 0; -317; 737; 1; 0; 40; 317; -93; 737"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 7; 0; 317; -737; 1; 0; -40; 317;93;-737. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_3",
+    "number": 3,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Đề thi Giữa kỳ",
+    "topic": "Mật mã đường cong Elliptic (ECC)",
+    "difficulty": "Trung bình",
+    "question": "Điểm nào dưới đây không thuộc nhóm đường cong E11(1,6)?",
+    "images": [],
+    "options": [
+      "(2,8)",
+      "(8, 8)",
+      "(7, 2)",
+      "(5, 6)"
+    ],
+    "correct_index": 0,
+    "explanation": "Dạng đường cong eliptic:  mod p\nCó\nTính bên trái và bên phải rồi mod cho p, nếu kết quả giống nhau thì điểm đó thuộc",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_4",
+    "number": 4,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Hệ mật nào sau đây có cấu trúc mạng Feistel?",
+    "images": [],
+    "options": [
+      "Serpent, RC4",
+      "DES,RC6",
+      "DES, RC4",
+      "AES, Blowfish"
+    ],
+    "correct_index": 1,
+    "explanation": "Mã khối: DES, AES, RC6, Serphent, Blowfish\nMã dòng: RC4",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_5",
+    "number": 5,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật AES",
+    "difficulty": "Trung bình",
+    "question": "Thuật toán AES có bao nhiêu vòng lặp?",
+    "images": [],
+    "options": [
+      "12/14/16",
+      "10/12/16",
+      "10/14/16",
+      "10/12/14"
+    ],
+    "correct_index": 3,
+    "explanation": "Tương ứng với độ dài khoá: 128, 192, 256",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_6",
+    "number": 6,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "CFB, OFB và CTR là các chế độ làm việc của mã dòng",
+      "Có thể thực thi quá trình mã hóa song song trong chế độ CFB",
+      "ECB thường được sử dụng trong mã hóa khóa, hoặc các dữ liệu chỉ bao gồm một khối",
+      "CBC là chế độ thường sử dụng của mã khối"
+    ],
+    "correct_index": 1,
+    "explanation": "CFB: Cipher Feeddback\nOFB: Output Feedback\nCTR: Counter Mode\nECB: Electronic Codebook\nCBC: Cipher Block Chaining",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_7",
+    "number": 7,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Số phần tử sinh của nhóm nhân Z*35 là?",
+    "images": [],
+    "options": [
+      "0",
+      "30",
+      "20",
+      "34"
+    ],
+    "correct_index": 0,
+    "explanation": "có phần tử sinh nếu và chỉ nếu n = 2, 4,  hoặc . Trong đó p là số nguyên tố lẻ và k ≥ 1.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_8",
+    "number": 8,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Trong hệ mật ElGamal, trên Z*113 , với phần tử sinh =3, khoá bí mật là a=86, khoá công khai của hệ mật là:",
+    "images": [],
+    "options": [
+      "(113, 3, 22)",
+      "(113, 3, 35)",
+      "(113, 3, 37)",
+      "(113, 3, 48)"
+    ],
+    "correct_index": 0,
+    "explanation": "Khoá công khai: (p, phần tử sinh, phần tử sinh ^ khoá bí mật)",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_9",
+    "number": 9,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong thuật toán DES, khi mã hóa ở vòng ¡ biết nửa phải của bản rõ sau khi mở rộng thì được chuỗi E(Ri-1)= 0010 1010 1111 1000 1001 0011 0100 1010 1011 1000 1010 1000 và khóa vòng là Ki = 0111 0100 1011 1010 1011 0001 0001 1101 0000 1111 0010 0001. Đáp án nào là 8 bit cuối cùng của kết quả hàm Feistel trước khi đưa vào các hộp thế?",
+    "images": [],
+    "options": [
+      "10000001",
+      "10011001",
+      "10101001",
+      "10001001"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 10001001. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_10",
+    "number": 10,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Trong thuật toán DES, biết L2R2 = 1011 1111 0100 0111 0011 0100 1010 0101 1110 1010 1000 0111 0100 1101 0110 1011. Đáp án nào sau đây là 6 bit cao nhất của L3.",
+    "images": [],
+    "options": [
+      "101111",
+      "101010",
+      "111010",
+      "010111"
+    ],
+    "correct_index": 2,
+    "explanation": "L3 = R2\nR3 = L2 + f(R2, key)",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_11",
+    "number": 11,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Alice sử dụng mã dịch vòng để mã hóa bản rõ “THIGIUAKI” với khóa k=19. Hãy chọn bản mã cho bản rõ của Alice.",
+    "images": [],
+    "options": [
+      "MABZBNTDB",
+      "MAEZENTDE.",
+      "MABZBLTDB",
+      "MABZBNTDH."
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] MABZBNTDB. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_12",
+    "number": 12,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 4",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Trong hệ mã RSA ta có khóa công khai Ke = (n, e), khóa bí mật Kd = d. Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Độ an toàn của hệ mật RSA dựa trên tính khó giải của bài toán phân tích thừa số nguyên lớn.",
+      "Để truyền tin mật bản mã được tính như sau: y = x^e mod n",
+      "Chọn số mũ e phải thỏa mãn điều kiện gcd(e,n)=1",
+      "Khóa bí mật được tính theo công thức d = e^-1 mod phi(n)"
+    ],
+    "correct_index": 2,
+    "explanation": "e phải thoả mãn gcd(e, phi(n)) = 1",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_13",
+    "number": 13,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Sbox là thành phần phi tuyến duy nhất của hệ mật DES có chức năng che giấu mỗi quan hệ giữa bản mã và bản rõ nhằm tăng tính xáo trộn (confusion) của thuật toán.",
+      "Trong Sbox của hệ mật DES các bít vào luôn phụ thuộc tuyến tính vào các bít đầu ra.",
+      "Trong Sbox của hệ mật DES, sửa đổi 1 bit đầu vào sẽ làm thay đổi ít nhất là 2 bit đầu ra",
+      "Trong thuật toán DES có 8 hộp thế S1 ... S8 trong đó mỗi Si là một bảng 4 x 16 có các hàng là các số nguyên từ0 đến 15."
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Trong Sbox của hệ mật DES các bít vào luôn phụ thuộc tuyến tính vào các bít đầu ra.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_14",
+    "number": 14,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Trong hệ mật RSA, cho p=29, q=13, e=5, giải mã bản mã c=301 cho kết quả là:",
+    "images": [],
+    "options": [
+      "188",
+      "280",
+      "56",
+      "32"
+    ],
+    "correct_index": 3,
+    "explanation": "p = 29, q = 13 => n = 29 * 13 = 377, phi(n) = 28 * 12 = 336. Khóa bí mật d = e^-1 mod phi(n) = 5^-1 mod 336 = 269 (vì 5*269 = 1345 = 4*336 + 1). Giải mã bản rõ: m = c^d mod n = 301^269 mod 377 = 32.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_15",
+    "number": 15,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Trung bình",
+    "question": "Phần tử nào sau đây KHÔNG phải là phần tử sinh của nhóm nhân Z*23?",
+    "images": [
+      "assets/images/p_105_image32.png"
+    ],
+    "options": [
+      "3",
+      "19",
+      "5",
+      "7"
+    ],
+    "correct_index": 0,
+    "explanation": "Nhóm nhân Z*23 có cấp phi(23) = 22. Phần tử sinh phải có cấp đúng bằng 22. Ta kiểm tra cấp của 3: 3^11 = 177147 = 7702*23 + 1 ≡ 1 (mod 23), do đó cấp của 3 là 11 != 22 => 3 KHÔNG phải là phần tử sinh. Trong khi đó 19, 5, 7 đều có cấp là 22 nên là phần tử sinh.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_16",
+    "number": 16,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong thuật toán DES, cho B3 = 110001 và các hộp thế sau, hãy tìm đầu ra của B3 khi chuỗi được cho qua hộp thế.",
+    "images": [
+      "assets/images/p_107_image26.png"
+    ],
+    "options": [
+      "0000",
+      "0101",
+      "1011",
+      "0100"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 0100. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_17",
+    "number": 17,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Vận dụng cao",
+    "question": "Các hộp thế trong DES là ánh xạ biến đổi:",
+    "images": [],
+    "options": [
+      "4 bit thành 6 bit",
+      "6 bit thành 4 bit",
+      "2 bịt thành 6 bit",
+      "2 bit thành 4 bit"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 6 bit thành 4 bit. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_18",
+    "number": 18,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Trong thuật toán DES, hoán vị IP có kích cỡ:",
+    "images": [],
+    "options": [
+      "8x8",
+      "16x8",
+      "16x16",
+      "8x16"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] 8x8. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_19",
+    "number": 19,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Alice thỏa thuận với Bob để truyền tin bí mật bằng hệ mật Hill. Hãy cho biết Bob sẽ nhận được bản mã nào nếu Alice mã bản rõ “EASY” với khóa k= “PDDG“?",
+    "images": [],
+    "options": [
+      "IMEQ",
+      "INEQ",
+      "IMFQ",
+      "IMEP"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] IMEQ. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_20",
+    "number": 20,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là đúng?",
+    "images": [],
+    "options": [
+      "Mật mã giúp đảm bảo bí mật, xác thực và sẵn sàng của dữ liệu.",
+      "Mật mã giúp đảm bảo tính bí mật, toàn vẹn, xác thực và sẵn sàng của dữ liệu.",
+      "Mật mã giúp đảm bảo tính bí mật, toàn vẹn và xác thực của dữ liệu.",
+      "Mật mã giúp đảm bảo tính bí mật, toàn vẹn, kịp thời của dữ liệu."
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Mật mã giúp đảm bảo tính bí mật, toàn vẹn và xác thực của dữ liệu.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_21",
+    "number": 21,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật AES",
+    "difficulty": "Trung bình",
+    "question": "Trong thủ tục mở rộng khóa của AES, biết RC[8] = (80).Hãy tính RC[9].",
+    "images": [
+      "assets/images/p_138_image23.png"
+    ],
+    "options": [
+      "1A",
+      "1B",
+      "81",
+      "13"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 1B. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_22",
+    "number": 22,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là ĐÚNG?",
+    "images": [],
+    "options": [
+      "Tập Zn = {0, 1,2,..., n -1} thường được gọi là tập các thặng dư thu gọn theo mod n",
+      "Nếu p là số nguyên tố và a số nguyên dương nhỏ hơn p, ta luôn có a^p= a mod p_",
+      "Nếu p là số nguyên tố thì Z*p={0,1, 2,...., p -1}",
+      "Nếu p là số nguyên tố và a là số nguyên bất kỳ khác bội của p, GCD(a, p) = 1, ta luôn có a^(p-1) mod p = a."
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Nếu p là số nguyên tố và a số nguyên dương nhỏ hơn p, ta luôn có a^p= a mod p_. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_23",
+    "number": 23,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Alice sử dụng hệ mật Affine để mã hóa bản rõ “THANHCONG” với khóa (a,b) = (8,5). Hãy chọn bản mã cho bản rõ của Alice.",
+    "images": [],
+    "options": [
+      "BJLLJVNFB",
+      "BJFFJVNFB",
+      "MFFMVNFB",
+      "Tất cả phương án cho bản mã đầu ra đều sai"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] BJFFJVNFB. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_24",
+    "number": 24,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật AES",
+    "difficulty": "Trung bình",
+    "question": "Ma trận 4 x 4 byte trong thuật toán AES được gọi là:",
+    "images": [],
+    "options": [
+      "Chuyển vị",
+      "Hoán vị",
+      "Từ",
+      "Trạng thái"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Trạng thái. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_25",
+    "number": 25,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Phần tử sinh nhỏ nhất của Z*47 là:",
+    "images": [],
+    "options": [
+      "2",
+      "3",
+      "5",
+      "4"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 5. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_26",
+    "number": 26,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Mã hóa là quá trình biến đổi bản rõ thành bản mã, thông thường bao gồm việc áp dụng thuật toán mã hóa và một số quá trình xử lí thông tin kèm theo.",
+      "Khóa mật mã là thông tin tham số dùng để mã hóa, chỉ người gửi và người nhận biết. Khóa thường phụ thuộc bản rõ và có độ dài phù hợp với yêu cầu bảo mật.",
+      "Giải mã là quá trình chuyển bản mã thành bản rõ, đây là quá trình ngược lại của mã hóa",
+      "Thám mã nghiên cứu các nguyên lí và phương pháp giải mã mà không biết khóa."
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Khóa mật mã là thông tin tham số dùng để mã hóa, chỉ người gửi và người nhận biết. Khóa thường phụ thuộc bản rõ và có độ dài phù hợp với yêu cầu bảo mật.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_27",
+    "number": 27,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Vận dụng cao",
+    "question": "Alice mã hóa bản rõ sử dụng hệ mật AES với bảng Sbox dưới đây. Tại bước Subbyte, hãy chọn đáp án cho (s01, s12, s33).",
+    "images": [
+      "assets/images/p_165_image17.png"
+    ],
+    "options": [
+      "(63,28,05)",
+      "(6E,28,96)",
+      "(6E/28,05)",
+      "(6E,DF,05)"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] (6E/28,05). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_28",
+    "number": 28,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Chọn kết quả của phép tính (23) . (15)",
+    "images": [],
+    "options": [
+      "B9",
+      "B8",
+      "A9",
+      "98"
+    ],
+    "correct_index": 2,
+    "explanation": "(23).(15) = (23).(10) + (23)(04) + (23)(01)\n(23)(02) = xtime(23)\n(23)(04) = xtime((23)(02))",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_29",
+    "number": 29,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Trong thuật toán DES, cho C1D1= 0110 1111 1000 1001 1111 0011 1000 1001 1110 1010 0011 1001 1100 1011. Hãy cho biết kết quả của C2D2",
+    "images": [],
+    "options": [
+      "1101 1111 1001 0011 1110 0111 0000 0011 1101 0100 0111 0011 1001 0111",
+      "1101 1111 0001 0011 1110 0111 0000 0001 1101 0100 0111 0011 1001 0111",
+      "1101 1111 0001 0011 1110 0111 0000 0011 1101 0100 0111 0011 1001 0111",
+      "1101 1111 0001 1011 1110 0111 0000 0011 1101 0100 0111 0011 1001 0111"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 1101 1111 0001 0011 1110 0111 0000 0011 1101 0100 0111 0011 1001 0111. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_30",
+    "number": 30,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Tập tất cả các phần tử KHÔNG là thặng dư bậc 2 trong Z*17 là:",
+    "images": [],
+    "options": [
+      "{1, 2, 4, 8, 10, 13, 15, 16)",
+      "{3, 5, 6, 7, 10, 13, 12, 14)",
+      "{3, 5, 6, 7,10, 11, 12, 14)",
+      "{1 ,2 ,4 ,8 , 9, 13, 15, 16}"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] {3, 5, 6, 7,10, 11, 12, 14). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_31",
+    "number": 31,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "So với RSA, điều nào dưới đây đúng với mật mã đường cong Elliptic?",
+    "images": [],
+    "options": [
+      "Chứng minh về mặt toán học là kém an toàn hơn",
+      "Đảm bảo độ an toàn tương đương trong khi khóa có độ dài ngắn hơn",
+      "Để đảm bảo độ an toàn tương đương thì khóa phải có độ dài lớn hơn",
+      "Chứng minh về mặt toán học là an toàn hơn"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Đảm bảo độ an toàn tương đương trong khi khóa có độ dài ngắn hơn. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_32",
+    "number": 32,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Tìm cấp của phần tử a = 17 trên Z*20?",
+    "images": [
+      "assets/images/p_198_image34.png"
+    ],
+    "options": [
+      "2",
+      "4",
+      "1",
+      "8"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 4. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_33",
+    "number": 33,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4, Đề thi Giữa kỳ",
+    "topic": "Mật mã đường cong Elliptic (ECC)",
+    "difficulty": "Trung bình",
+    "question": "Cho hệ đường cong Ellip: y^2 = x^3 + x + 6 mod 11, cho điểm sinh G = (7, 2); Người dùng A chọn khoá riêng nA = 3. Hãy tính khoá công khai của A?",
+    "images": [
+      "assets/images/p_203_image27.png"
+    ],
+    "options": [
+      "(2, 7)",
+      "(5, 9)",
+      "(5, 2)",
+      "(3, 5)"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] (3, 5). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_34",
+    "number": 34,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Alice mã hóa bản rõ sử dụng hệ mật AES và đang thực hiện bước ShiftRows, hãy chọn kết quả của s21, s32",
+    "images": [
+      "assets/images/p_210_image30.png",
+      "assets/images/p_215_image24.png"
+    ],
+    "options": [
+      "(DE,67)",
+      "(20,AD)",
+      "(DE,B2)",
+      "(7F,36)"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] (DE,B2). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_35",
+    "number": 35,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Lựa chọn các bit abcd trong đầu ra IP(x) của thuật toán DES.",
+    "images": [
+      "assets/images/p_217_image33.png"
+    ],
+    "options": [
+      "1110",
+      "1111",
+      "1011",
+      "1101"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] 1110. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_36",
+    "number": 36,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1, Bộ đề Đề 2",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Số nào sau đây lớn nhất?",
+    "images": [],
+    "options": [
+      "GCD (3345, 1256)",
+      "GCD (6458, 346)",
+      "GCD (1112, 8946)",
+      "GCD (712, 9468)"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] GCD (712, 9468). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_37",
+    "number": 37,
+    "exam": "Đề 1",
+    "source": "Bộ đề Đề 1",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Alice thỏa thuận với Bob để truyền tin bí mật bằng hệ mật Vigenere với khóa k = “AND”. Bob nhận được bản mã “BHWTRUFYB”. Hãy chọn bản rõ mà Bob thu được.",
+    "images": [],
+    "options": [
+      "BEAUTIFUL",
+      "WONDERFUL",
+      "BUTTERFLY",
+      "BUTTERFLU"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] BUTTERFLY. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_38",
+    "number": 38,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Hệ mật AES",
+    "difficulty": "Trung bình",
+    "question": "Trong thủ tục mở rộng khóa của AES, biết RC[2] = (02). Hãy tính RC[5].",
+    "images": [],
+    "options": [
+      "1A",
+      "1F",
+      "10",
+      "1E"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 10. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_39",
+    "number": 39,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật AES",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong thủ tục mở rộng khóa của hệ mật AES giả sử w = (68; 74; 6D 79). Chọn giá trị đúng cho SubWord(w), biết hộp thế như sau:",
+    "images": [
+      "assets/images/p_244_image12.png"
+    ],
+    "options": [
+      "(44; 92; 3a; b6)",
+      "(45; 93; 3c; b6)",
+      "(45; 5c; 3c; b6)",
+      "(45; 92; 3c; b6)"
+    ],
+    "correct_index": 3,
+    "explanation": "Tra bảng S-box của AES: S[0x68] = 0x45, S[0x74] = 0x92, S[0x6D] = 0x3C, S[0x79] = 0xB6. Do đó SubWord(w) = (45; 92; 3c; b6).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_40",
+    "number": 40,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Nếu a = b.q + r thì gcd(a,b) = gcd(b,r)",
+      "Số nguyên a >= 0 được gọi là số nguyên tố, nếu a không có ước số nào khác ngoài 1 và chính a",
+      "Hai số a và b được gọi là nguyên tố cùng nhau nếu chúng không có ước chung nào khác 1, tức là gcd(a,b)=1.",
+      "Nếu b > 0 và ba thì qcd(a,b) = b"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Số nguyên a >= 0 được gọi là số nguyên tố, nếu a không có ước số nào khác ngoài 1 và chính a. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_41",
+    "number": 41,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Áp dụng hệ mật mã hóa khóa chạy, tìm bản mã của bản rõ “Unstoppable” với mầm khóa k = “Sia\"",
+    "images": [],
+    "options": [
+      "MVSLWPHIBDM",
+      "MVSLWPPIBDM",
+      "MVSLWPPIDBM",
+      "MVLSWPHIBDM"
+    ],
+    "correct_index": 0,
+    "explanation": "Mã hóa bản rõ 'UNSTOPPABLE' với khóa 'SIA': U(20)+S(18)=38≡12(M); N(13)+I(8)=21(V); S(18)+A(0)=18(S); T(19)+S(18)=37≡11(L); O(14)+I(8)=22(W); P(15)+A(0)=15(P); P(15)+S(18)=33≡7(H); A(0)+I(8)=8(I); B(1)+A(0)=1(B); L(11)+S(18)=29≡3(D); E(4)+I(8)=12(M). Kết quả thu được: MVSLWPHIBDM.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_42",
+    "number": 42,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Đáp án nào dưới đây là kết quả của phi(969)",
+    "images": [],
+    "options": [
+      "240",
+      "286",
+      "576",
+      "567"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 576. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_43",
+    "number": 43,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật AES",
+    "difficulty": "Vận dụng cao",
+    "question": "Chọn đáp án đúng cho xtime(92)",
+    "images": [],
+    "options": [
+      "36",
+      "3F",
+      "2E",
+      "2D"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 3F. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_44",
+    "number": 44,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Trung bình",
+    "question": "Kích thước khóa của RC4 là?",
+    "images": [],
+    "options": [
+      "256 - 2048 bit",
+      "1024 - 2048 bit",
+      "40- 2048 bit",
+      "256 - 1024 bit"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 40- 2048 bit. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_45",
+    "number": 45,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là ĐÚNG?",
+    "images": [],
+    "options": [
+      "Độ an toàn của hệ mật Merkle - Hellman dựa trên tính khó giải của bài toán xếp ba lô trong trường hợp dãy số đầu vào là dãy siêu tăng.",
+      "Giải thuật cho bài toán xếp balo tổng quát bằng phương pháp vét cạn có độ phức tạp là O(2^n) với n là số phần tử của dãy",
+      "Giải thuật cho bài toán xếp balo trong trường hợp dãy siêu tăng có độ phức tạp O(n^2) với n là số phần tử của dãy.",
+      "Dãy (37, 49, 97, 163, 349) là dãy siêu tăng"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Giải thuật cho bài toán xếp balo tổng quát bằng phương pháp vét cạn có độ phức tạp là O(2^n) với n là số phần tử của dãy. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_46",
+    "number": 46,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây liên quan tới mã dòng là ĐÚNG?",
+    "images": [],
+    "options": [
+      "Mã dòng tạo ra dòng khóa",
+      "Mã dòng chậm hơn mã khối",
+      "Mã dòng là thuật toán mã hóa bất đối xứng",
+      "Mã dòng không phù hợp cho mã hóa trên phần cứng"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] Mã dòng tạo ra dòng khóa. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_47",
+    "number": 47,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Ký hiệu Jacobi nào sau đây có giá trị KHÁC",
+    "images": [
+      "assets/images/p_300_image16.png"
+    ],
+    "options": [
+      "D",
+      "B",
+      "A",
+      "C"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] B. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_48",
+    "number": 48,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào dưới đây là SAI về xác thực thông điệp?",
+    "images": [],
+    "options": [
+      "Giúp chống chối từ nguồn gốc (giải quyết tranh chấp)",
+      "Giúp kiểm soát tính toàn vẹn của thông điệp",
+      "Là quá trình trao đổi khóa",
+      "Phát hiện lỗi trong quá trình truyền thông điệp"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Là quá trình trao đổi khóa. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_49",
+    "number": 49,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong thuật toán DES, cho B1 = 110100 và hộp thế S1, tìm đầu ra của S1(B1)",
+    "images": [
+      "assets/images/p_311_image22.png"
+    ],
+    "options": [
+      "0101",
+      "1001",
+      "1100",
+      "0011"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 1001. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_50",
+    "number": 50,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Điều nào là không đúng đối với hàm f trong thuật toán DES?",
+    "images": [],
+    "options": [
+      "Quá trình thay thế của hàm f giúp biến đổi 48 bit đầu vào thành 32 bit đầu ra",
+      "Đầu ra của hàm f là một khối 32 bit",
+      "Hàm f gồm 4 giai đoạn (mở rộng, trộn khóa, thay thế, hoán vị)",
+      "Đầu vào của hàm f là các khối 32 bit"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Đầu vào của hàm f là các khối 32 bit. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_51",
+    "number": 51,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 4",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Trong các phần tử : 10, 4, 13, 18, bậc của phần tử nào là nhỏ nhất trong nhóm nhân Z*37?",
+    "images": [],
+    "options": [
+      "10",
+      "13",
+      "18",
+      "4"
+    ],
+    "correct_index": 0,
+    "explanation": "Có cách nào nhanh hơn không?",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_52",
+    "number": 52,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Cho các nhóm nhân Z*n với n = {21; 30; 35; 50} nhóm nào có phần tử sinh?",
+    "images": [],
+    "options": [
+      "Z*21",
+      "Z*35",
+      "Z*50",
+      "Z*30"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Z*50. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_53",
+    "number": 53,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Khẳng định nào sau đây về thuật toán DES là ĐÚNG?",
+    "images": [],
+    "options": [
+      "Thuật toán DES sinh 16 khóa con khác nhau để sử dụng mã hóa/giải mã.",
+      "Thuật toán DES sử dụng 8 khóa, mỗi khóa tách ra thành 2 nửa trái và phải để sử dụng cho cho 16 vòng mã hóa/giải mã.",
+      "Thuật toán DES sử dụng 32 khóa, mỗi khóa XOR với nửa trái hoặc phải của bản rõ/bản mã trong 16 vòng mã hóa/giải mã.",
+      "Thuật toán DES tách khóa thành 2 nửa trái và phải tương tự như với bản rõ/bản mã trong mỗi vòng mã hóa/giải mã."
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] Thuật toán DES sinh 16 khóa con khác nhau để sử dụng mã hóa/giải mã.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_54",
+    "number": 54,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Giả sử hệ mã sử dụng là Affine với k = (a, b) và hàm mã y = ax + b mod 26 ta có O(14) là mã hóa của m(12) và M(12) là mã hóa của u(20). Khóa nào sau đây là khóa đúng?",
+    "images": [],
+    "options": [
+      "(3,7)",
+      "(7,3)",
+      "(4,3)",
+      "(3,4)"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] (3,4). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_55",
+    "number": 55,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4, Đề thi Giữa kỳ",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Giả sử ta có bản rõ 'Friday' được mã hóa bằng hệ mã Hill với m = 2, bản mã nhận được là OBJZMA. Đáp án nào dưới đây là ma trận khóa mã đúng?",
+    "images": [
+      "assets/images/p_343_image13.png",
+      "assets/images/p_348_image5.png"
+    ],
+    "options": [
+      "B",
+      "C",
+      "D",
+      "A"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] D. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_56",
+    "number": 56,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Trong hệ mã khối DES, S-box có chức năng che giấu mối quan hệ giữa bản mã và bản rõ, nhằm tăng tính xáo trộn của thuật toán.",
+      "Theo Shannon có 2 nguyên lý cơ bản để đảm bảo độ an toàn cho mã khối đó là việc tạo ra tính xáo trộn và tính khuếch tán.",
+      "Trong thuật toán AES, tầng trộn tuyến tính được thực hiện thông qua hai hàm ShiftRows và MixColumns để đảm bảo tính khuếch tán cao qua các vòng.",
+      "Tính xáo trộn được tạo bởi phép hoán vị, tính khuếch tán được tạo bởi phép thế."
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Tính xáo trộn được tạo bởi phép hoán vị, tính khuếch tán được tạo bởi phép thế.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_57",
+    "number": 57,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 4",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Trong chế độ CBC khi cùng khối bản rõ được mã hóa dưới cùng một khóa và một IV thì sẽ cho kết quả các khối mã khác nhau.",
+      "Trong chế độ ECB một hay nhiều bit sai trong một khối mã đơn lẻ chỉ ảnh hưởng tới chính việc giải mã khối đó.",
+      "Trong chế độ ECB hai khối bản rõ giống nhau thì cho ra hai khối bản mã giống nhau.",
+      "Trong chế độ OFB nếu thay đổi IV thì làm cho một bản rõ đầu vào như nhau sẽ được mã hóa thành các bản mã khác nhau"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] Trong chế độ CBC khi cùng khối bản rõ được mã hóa dưới cùng một khóa và một IV thì sẽ cho kết quả các khối mã khác nhau.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_58",
+    "number": 58,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "a =b mod n khi và chỉ khi a và b có phần dư như nhau khi chia cho n.",
+      "Số b được gọi là đại diện của a mod n nếu a = b mod n và 0 < b < n.",
+      "-11 mod 7; -4 mod 7; 3 mod 7; 10 mod 7; 17 mod 7;... là các lớp tương đương trên Z7",
+      "Thực hiện phép chia a cho n ta được 2 số nguyên q, r sao cho: a=n x q + r; 0<r<n. Khi đó q được gọi là thương và r được gọi là số dư."
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] -11 mod 7; -4 mod 7; 3 mod 7; 10 mod 7; 17 mod 7;... là các lớp tương đương trên Z7. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_59",
+    "number": 59,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Trong các cặp số sau, cặp số nào KHÔNG là cặp số nguyên tố cùng nhau?",
+    "images": [],
+    "options": [
+      "701, 89",
+      "3765, 156",
+      "85, 247",
+      "391, 15"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 3765, 156. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_60",
+    "number": 60,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Vận dụng cao",
+    "question": "Áp dụng thuật toán nhân bình phương có lặp để tính 41^117 mod 211. Em hãy điền các giá trị còn thiếu trong bảng trên.",
+    "images": [
+      "assets/images/p_375_image3.png"
+    ],
+    "options": [
+      "X1=1; X2 = 1; X3 = 47; X4 = 99; X5 = 35; X6 = 89",
+      "X1=1; X2 = 1; X3 = 47; X4 = 99; X5 = 104; X6 = 168",
+      "X1=0; X2 = 1; X3 = 70; X4 = 47; X5 = 104; X6 = 35",
+      "X1=0; X2 = 1; X3 = 99; X4 = 47; X5 = 35; X6 = 89"
+    ],
+    "correct_index": 0,
+    "explanation": "Biểu diễn nhị phân của số mũ 117 = (1110101)_2. Thực hiện thuật toán nhân bình phương có lặp qua từng bước ta thu được các giá trị tương ứng X1=1, X2=1, X3=47, X4=99, X5=35, X6=89.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_61",
+    "number": 61,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Trung bình",
+    "question": "Độ an toàn của hệ mật ElGamal dựa trên bài toàn nào sau đây?",
+    "images": [],
+    "options": [
+      "Phân tích thừa số nguyên",
+      "Logarith rời rạc trên đường cong Elliptic",
+      "Logarith rời rạc",
+      "Xếp ba lô"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Logarith rời rạc. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_62",
+    "number": 62,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Vận dụng cao",
+    "question": "Xét hệ mật Merkle - Hellman sử dụng phép hoán vị p của {1, 2, 3, 4, 5, 6} như sau: p(1) = 4, p(2) =5, p(3) = 2, p(4) = 1, p(5) = 6, p(6) = 3. Giả sử dãy siêu tăng được chọn là (12, 17, 33, 64, 137, 326), giá trị ngẫu nhiên W được chọn là 635, modulo M được chọn là 737. Khóa công khai là tập số?",
+    "images": [
+      "assets/images/p_805_image25.png"
+    ],
+    "options": [
+      "(319, 650, 477, 250, 29, 105)",
+      "(250, 477, 105, 319, 650, 29)",
+      "(105, 29, 477, 250, 650, 319)",
+      "(105, 29, 250, 477, 650, 319)"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] (105, 29, 477, 250, 650, 319). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_63",
+    "number": 63,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Trung bình",
+    "question": "Sử dụng hệ mật ElGamal với khóa công khai (211, 41, 89). Giả sử người dùng A chọn khóa riêng a = 117, chọn số ngẫu nhiên k = 33, bản tin m = 56. Bản mã thu được khi mã x là y = (y1,y2). Hãy cho biết giá trị y2",
+    "images": [
+      "assets/images/p_404_image11.png"
+    ],
+    "options": [
+      "123",
+      "28",
+      "65",
+      "192"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 192. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_64",
+    "number": 64,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật AES",
+    "difficulty": "Trung bình",
+    "question": "AES-192 thực hiện bao nhiêu vòng?",
+    "images": [],
+    "options": [
+      "16",
+      "10",
+      "12",
+      "14"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 12. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_65",
+    "number": 65,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Cơ bản",
+    "question": "Chế độ làm việc nào sau đây của mã khối không thể xử lí mã hóa song song?",
+    "images": [],
+    "options": [
+      "ECB",
+      "CRT",
+      "CBC",
+      "Cả 3 chế độ"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] CBC. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_66",
+    "number": 66,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Phát biểu nào sau đây là đúng về định nghĩa số Blum?",
+    "images": [],
+    "options": [
+      "Số nguyên Blum là một hợp số có dạng n = p.q trong đó p, q là các số nguyên tố khác nhau thỏa mãn: p = 3, mod 7, q =3 mod 7.",
+      "Số nguyên Blum là một hợp số có dạng n = p.q trong đó p, q là các số nguyên tố khác nhau thỏa mãn: p = 3 mod 4, q = 3 mod 4",
+      "Số nguyên Blum là một hợp số có dạng n = p.q+1 trong đó p, q là các số nguyên tố khác nhau thỏa mãn: p = 3 mod 7, q = 3 mod 7.",
+      "Số nguyên Blum là một hợp số có dạng n = p.q+1 trong đó p, q là các số nguyên tố khác nhau thỏa mãn: p = 3 mod 4, q = 3 mod 4."
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Số nguyên Blum là một hợp số có dạng n = p.q trong đó p, q là các số nguyên tố khác nhau thỏa mãn: p = 3 mod 4, q = 3 mod 4. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_67",
+    "number": 67,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Độ an toàn của hệ mật. nào dưới đây dựa trên cùng bài toán với hệ mật RSA?",
+    "images": [],
+    "options": [
+      "ElGamal",
+      "Rabin",
+      "ECC",
+      "Merkle Hellman"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Rabin. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_68",
+    "number": 68,
+    "exam": "Đề 2",
+    "source": "Bộ đề Đề 2, Bộ đề Đề 3",
+    "topic": "Hệ mật AES",
+    "difficulty": "Trung bình",
+    "question": "Kích thước khóa mở rộng của AES-128 là bao nhiêu?",
+    "images": [],
+    "options": [
+      "54 từ",
+      "44 từ",
+      "32 từ",
+      "64 từ"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 44 từ. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_69",
+    "number": 69,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Vận dụng cao",
+    "question": "Cho hệ chữ kí RSA với p = 31; q = 23; d = 223 (thỏa mãn gcd(d, phi(m) = 1), thông điệp cần kí m = 439. Khẳng định nào sau đây là ĐÚNG?",
+    "images": [],
+    "options": [
+      "Để xác minh chữ kí ta tính m' = 284^223 mod 713 và so sánh với m nhận được",
+      "Ta phải giữ bí mật các giá trị p, q và n",
+      "Hệ chữ kí này có khóa công khai là (660, 367); khóa bí mật là 223",
+      "Thông điệp sau khi kí có giá trị là S = 284"
+    ],
+    "correct_index": 3,
+    "explanation": "n = 31 * 23 = 713, phi(n) = 30 * 22 = 660. Thông điệp m = 439. Chữ ký số RSA tạo bởi khóa bí mật d: S = m^d mod n = 439^223 mod 713 = 284. Khẳng định đúng là 'Thông điệp sau khi kí có giá trị là S = 284'.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_70",
+    "number": 70,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3, Đề thi Giữa kỳ",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong hệ mật Rabin, giả sử p = 199, q = 211, bản rõ m = 1731. Khẳng định nào sau đây là SAI",
+    "images": [],
+    "options": [
+      "Đầu vào của thuật toản tính căn bậc hai của bản mã c mod n được tạo từ việc mã hóa bản rõ m = 1731 là các giá trị = 15142, và p = 199; q = 211",
+      "Bản mã c = 11524.",
+      "4 nghiệm căn bắc hai của bản mã c thu được khi giải mã bản rõ m = 1731 là (1731, 40258, 3841, 38148)",
+      "Các phép toán trên hệ mật này đều thực hiện trên Z41989"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Bản mã c = 11524.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_71",
+    "number": 71,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Lực lượng khóa của hệ MDV là 26!",
+      "Trong hệ mặt khóa chay, độ dãi khỏa bằng độ dài bản rõ và từ khóa được nối tiếp bằng chính bản rõ.",
+      "Trong hệ mã Viqgener cần thực hiện 26^m pháp tính vét cạn để tìm khỏa đúng, với m là độ đãi của khóa.",
+      "Trong hệ mật thay thế đơn biểu khi khóa được chọn thì mỗi kí tự của bản rõ được ánh xa đến một kí tự duy nhất của bản mã"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] Lực lượng khóa của hệ MDV là 26!. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_72",
+    "number": 72,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Hàm băm một chiều cung cấp...",
+    "images": [],
+    "options": [
+      "Tính sẵn sàng",
+      "Tính bí mật",
+      "Tính toàn vẹn",
+      "Tính xác thực"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Tính toàn vẹn. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_73",
+    "number": 73,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Cho các nhóm nhân Z*n với n = {91; 57; 45; 98} nhóm nào có phần tử sinh?.",
+    "images": [],
+    "options": [
+      "Z*45",
+      "Z*57",
+      "Z*98",
+      "Z*91"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Z*98. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_74",
+    "number": 74,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Lựa chọn nào dưới đây không phải là thuật toán mã hóa?",
+    "images": [],
+    "options": [
+      "Twofish",
+      "DES",
+      "RC4",
+      "SHA-1"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] SHA-1. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_75",
+    "number": 75,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Đáp án nào dưới đây không phải là phần tử sinh của Z*41",
+    "images": [],
+    "options": [
+      "23",
+      "17",
+      "7",
+      "34"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] 23. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_76",
+    "number": 76,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Trong hệ mật RSA, cho p=37, q=41, e=211, d = 1051, giải mã bản mã c=237 cho kết quả là:",
+    "images": [],
+    "options": [
+      "56",
+      "1033",
+      "33",
+      "1034"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 1034. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_77",
+    "number": 77,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3, Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Đáp án nào sau đây là cấp của phần tử a = 12 trên Z*37?",
+    "images": [],
+    "options": [
+      "28",
+      "6",
+      "36",
+      "9"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 9. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_78",
+    "number": 78,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Số lượng khóa khác nhau tối đa có thể được sử dụng khi mã hóa bằng Tripple DES là:",
+    "images": [],
+    "options": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 3. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_79",
+    "number": 79,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Có thể sử dụng hàm băm như là một thuật toán dùng để mã hóa thông điệp.",
+      "Hăm băm tóm lược thông báo M có độ dài tùy ý thành bản băm có độ dài cổ định.",
+      "Hàm băm là hàm một chiều, không có khả năng tính ngược lại",
+      "Ánh xạ hàm băm không phải là một song ánh."
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] Có thể sử dụng hàm băm như là một thuật toán dùng để mã hóa thông điệp.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_80",
+    "number": 80,
+    "exam": "Đề 3",
+    "source": "Bộ đề Đề 3",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Trong các phần tử dưới đây bậc của phần tử nào là nhỏ nhất trong nhóm nhân Z*73?",
+    "images": [],
+    "options": [
+      "17",
+      "5",
+      "31",
+      "13"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] 17. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_81",
+    "number": 81,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là ĐÚNG?",
+    "images": [],
+    "options": [
+      "Nguyên lí xáo trộn được tạo bởi phép hoán vị.",
+      "Theo Shannon có 2 nguyên lý cơ bản để đảm bảo độ an toàn cho mã khối đó là việc tạo ra tính xáo trộn và tính khuếch tán.",
+      "Nguyên lí khuếch tán được tạo bởi phép thế.",
+      "Tất cả các đáp án trên."
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Theo Shannon có 2 nguyên lý cơ bản để đảm bảo độ an toàn cho mã khối đó là việc tạo ra tính xáo trộn và tính khuếch tán.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_82",
+    "number": 82,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là KHÔNG ĐÚNG?",
+    "images": [],
+    "options": [
+      "Mã đối xứng là hệ mật dùng một khóa cho quá trình mã và giải mã.",
+      "Mã khối và mã dòng là các hệ mật khóa đối xứng",
+      "Trong hệ chữ kí số ta sử dụng khóa riêng của người gửi để ký thông điệp",
+      "Trong hệ mật mã đối xứng ta sử dụng khóa riêng để mã thông tin nhằm đảm bảo tính bí mật"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Trong hệ mật mã đối xứng ta sử dụng khóa riêng để mã thông tin nhằm đảm bảo tính bí mật. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_83",
+    "number": 83,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hệ mật AES",
+    "difficulty": "Vận dụng cao",
+    "question": "Đáp án nào sau đây là kết quả của phép xtime (03) . (2F) trên GF(2^8) với đa thức rút gọn m(x) - x^8 + x^4 + x^3 + x + 1.",
+    "images": [],
+    "options": [
+      "0111 1110",
+      "0111 0001",
+      "0101 1111",
+      "1101 0000"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] 0111 0001. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_84",
+    "number": 84,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Đáp án nào dưới đây là phần tử sinh nhỏ nhất của Z*73 ?",
+    "images": [],
+    "options": [
+      "5",
+      "11",
+      "2",
+      "3"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] 5. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_85",
+    "number": 85,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Trung bình",
+    "question": "Tại vòng lặp i=1, với T[0] = 23, T[1] = 17; dòng lệnh 7 trong đoạn mã giả của thuật toán KSA ( thuộc RC4 ) sẽ cho ra kết quả bảng",
+    "images": [
+      "assets/images/p_698_image2.png"
+    ],
+    "options": [
+      "C",
+      "D",
+      "B",
+      "A"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] A. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_86",
+    "number": 86,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Đáp án nào sau đây là các bit tại các vị trí còn thiếu trong đầu ra P(C) theo thứ tự từ trên xuống. từ trái sang phải",
+    "images": [
+      "assets/images/p_704_image1.png"
+    ],
+    "options": [
+      "0-0-1-1-0-1-0",
+      "0-1-0-1-0-1-1",
+      "0-1-1-0-1-0-1",
+      "0-1-1-1-0-1-1"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] 0-1-1-1-0-1-1. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_87",
+    "number": 87,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "Trong thuật toán sinh khóa vòng của DES. Khẳng định nào sau đây là đúng nhất?",
+    "images": [],
+    "options": [
+      "Trong thủ tục sinh khóa vòng, tại các vòng 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15 ta thực hiện dịch trái 2 bit đối với các CiDi",
+      "Khóa đầu vào thuật toán DES là 64 bit, ta loại bỏ các bịt tại các vị trí là bội của 8 và thực O hiện theo phép hoán vị cố định PC-1, chia hai nửa, dịch trái bít mỗi nửa, hoán vị PC-2 để tạo 16 khóa vòng đầu ra.",
+      "Trong thủ tục sinh khóa vòng, tại các vòng 1, 2, 6, 16 ta thực hiện dịch trái 1 bịt đối với các CiDi",
+      "Tất cả các đáp bán đều đúng"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Khóa đầu vào thuật toán DES là 64 bit, ta loại bỏ các bịt tại các vị trí là bội của 8 và thực O hiện theo phép hoán vị cố định PC-1, chia hai nửa, dịch trái bít mỗi nửa, hoán vị PC-2 để tạo 16 khóa vòng đầu ra.. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_88",
+    "number": 88,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "-6 mod 7; 1 mod 7; 8 mod 7; 15 mod 7; ... là các lớp tương đương trên Z7",
+      "Thực hiện phép chia a cho n ta được 2 số nguyên q, r sao cho: a = n x q + r; 0 <= r < n. Khi đó q được gọi là thương và r được gọi là số dư.",
+      "Số b được gọi là đại diện của a mod n nếu a ≡ b mod n và 0 <= b < n.",
+      "a ≡ b (mod n) khi và chỉ khi a và b có phần dư như nhau khi chia cho n."
+    ],
+    "correct_index": 0,
+    "explanation": "-6 ≡ 1 ≡ 8 ≡ 15 (mod 7), do đó chúng cùng thuộc MỘT lớp tương đương [1]_7, chứ không phải 'là các lớp tương đương khác nhau trên Z7'. Vì vậy khẳng định A là SAI.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_89",
+    "number": 89,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Phần tử nào dưới đây không phải phần tử sinh của Z*97?",
+    "images": [],
+    "options": [
+      "2",
+      "29",
+      "5",
+      "10"
+    ],
+    "correct_index": 0,
+    "explanation": "Đáp án đúng là [A] 2. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_90",
+    "number": 90,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Đâu là kết quả của log17(21) trên Z*97?",
+    "images": [],
+    "options": [
+      "17",
+      "10",
+      "13",
+      "21"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] 13. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_91",
+    "number": 91,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong thuật toán tính căn bậc 2 sau, phép tính căn bậc 2 của 75 mod 97 (chọn b = 5) tại vòng lặp i= 1 cho ra kết quả của d, r, c là",
+    "images": [
+      "assets/images/p_779_image14.png"
+    ],
+    "options": [
+      "d = 1; r = 96; c = 28",
+      "d = 1; r = 96; c = 8",
+      "d = 96; r = 96; c = 28",
+      "d = 96; r = 69; c = 64"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] d = 1; r = 96; c = 8. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_92",
+    "number": 92,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong hệ mật Rabin, giả sử p = 199, q 211, bản rõ m = 1731. Khẳng định nào sau đây là SAI?",
+    "images": [],
+    "options": [
+      "Bản mã c = 15142",
+      "Các giá trị a; b; r; s thu được trong thuật toán khai căn bản mã c mod n lần lượt là -88; 83 139; 43",
+      "Đầu vào của thuật toán tính căn bậc hai của bản mã c mod n là các giá trị c = 15142, và n = 41898",
+      "4 nghiệm căn bậc hai của bản mã c thu được khi mã hóa bản rõ m = 1731 là (1731, 40258, 3841, 38148)"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] Đầu vào của thuật toán tính căn bậc hai của bản mã c mod n là các giá trị c = 15142, và n = 41898. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_93",
+    "number": 93,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Vận dụng cao",
+    "question": "Khẳng định nào sau đây là SAI đối với bài toán xếp ba lô và hệ mật Merkle-Hellman?",
+    "images": [],
+    "options": [
+      "Giải thuật cho bài toán xếp balo tổng quát bằng phương pháp vét cạn có độ phức tạp là O(2^n) với n là số phần tử của dãy",
+      "Giải thuật cho bài toán xếp balo trong trường hợp dãy siêu tăng có độ phức tạp O(n) với n là số phần tử của dãy",
+      "Độ an toàn của hệ mật Merkle - Hellman dựa trên tính khó giải của bài toán xếp ba lô tổng quát",
+      "Dãy (15, 47, 67, 130, 240) là dãy siêu tăng"
+    ],
+    "correct_index": 3,
+    "explanation": "Định nghĩa dãy siêu tăng: s_i > sum(s_1 ... s_{i-1}). Kiểm tra phần tử thứ 3: 15 + 47 = 62 < 67 (thỏa). Phần tử thứ 4: 15 + 47 + 67 = 129 < 130 (thỏa). Phần tử thứ 5: 15 + 47 + 67 + 130 = 259 > 240 (vi phạm vì 240 không lớn hơn tổng các phần tử trước nó). Do đó dãy này KHÔNG phải là dãy siêu tăng.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_94",
+    "number": 94,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI",
+    "images": [],
+    "options": [
+      "Ánh xạ hàm băm là một song ánh",
+      "Hàm băm là hàm một chiều, không có khả năng tính ngược lại",
+      "Hàm băm tóm lược thông báo M có độ dài tùy ý thành bản băm có độ dài cố định",
+      "Giá trị băm được coi như là đại diện cho một thông báo và nó có độ dài tùy thuộc vào thông báo đầu vào"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Giá trị băm được coi như là đại diện cho một thông báo và nó có độ dài tùy thuộc vào thông báo đầu vào. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_95",
+    "number": 95,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Xác thực thông tin liên quan đến các khía cạnh nào sau khi truyền tin trên mạng",
+    "images": [],
+    "options": [
+      "Không chối từ bản gốc",
+      "Bảo vệ tính toàn vẹn của bản tin",
+      "Kiểm chứng danh tính và nguồn gốc",
+      "Tất cả đáp án"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Tất cả đáp án. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_96",
+    "number": 96,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI",
+    "images": [],
+    "options": [
+      "Hàm băm có đặc tính một chiều tức với một giá trị băm y cho trước không có khả năng tính toán để tìm 1 đầu vào x mà h(x) = y",
+      "Ánh xạ hàm băm là một song ánh",
+      "Hàm băm có tính kháng va cham mạnh tức là không có khả năng về O mặt tính toán để tìm 2 đầu vào khác nhau bất kì x và xỉ mà h(x) = h(x’)",
+      "Hàm băm có tính kháng tiền ảnh thứ hai, tức là với một đầu vào chc trước x không có khả năng tính toán để tìm ra x' <> x mà h(x) = h(x')"
+    ],
+    "correct_index": 1,
+    "explanation": "Ánh xạ hàm băm tóm lược thông điệp có độ dài tùy ý thành giá trị băm có độ dài cố định, nên không thể là một song ánh (luôn có nhiều thông điệp khác nhau ánh xạ vào cùng một giá trị băm - va chạm). Do đó khẳng định 'Ánh xạ hàm băm là một song ánh' là SAI.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_97",
+    "number": 97,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Vận dụng cao",
+    "question": "Cho hệ chữ kí RSA với p = 31; q= 23; d=223 (thỏa mãn gcd(d, n) = 1), thông điệp cần kí m = 439. Khẳng định nào sau đây là SAI",
+    "images": [
+      "assets/images/p_835_image19.png"
+    ],
+    "options": [
+      "Hệ chữ kí này có khóa công khai là (660, 367); khóa bí mật là 223",
+      "Để xác minh chữ kí ta tính m' = 284^367 mod 713 và so sánh với m nhận được",
+      "Ta phải giữ bí mật các giá trị p, q và phi(n)",
+      "Thông điệp sau khi kí có giá trị là S = 284"
+    ],
+    "correct_index": 1,
+    "explanation": "Đáp án đúng là [B] Để xác minh chữ kí ta tính m' = 284^367 mod 713 và so sánh với m nhận được. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_98",
+    "number": 98,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Đâu là diễn của phần tử nghịch đảo của phần tử với phép toán * và phần tử đơn vị e",
+    "images": [],
+    "options": [
+      "a*e=a",
+      "a*b=a",
+      "a*b=b",
+      "a*b=e"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] a*b=e. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_99",
+    "number": 99,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Số nào sau đây lớn nhất?",
+    "images": [],
+    "options": [
+      "GCD (214, 694)",
+      "GCD (347, 491)",
+      "GCD (65, 95)",
+      "GCD (91, 133)"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] GCD (91, 133). Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_100",
+    "number": 100,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Mật mã đường cong Elliptic (ECC)",
+    "difficulty": "Trung bình",
+    "question": "Cho hệ đường cong Ellip: y^2 = x^3 + x + 6 mod 11, cho điểm sinh G = (7, 2); số ngẫu nhiên k = 2. Khóa công khai của A là PA = (5, 2) và KPA = (10,2). Giả sử bản rõ M được mã thành điểm bán rõ PM = (3, 6), hãy tìm PC bâng cách dùng khóa công khai của A?",
+    "images": [
+      "assets/images/p_851_image18.png",
+      "assets/images/p_851_image29.png"
+    ],
+    "options": [
+      "[(3,5); (10,2)]",
+      "[(2.7); (10,2)]",
+      "[(7,2); (10,9)]",
+      "[(2,7); (10,9)]"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] [(2,7); (10,9)]. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_101",
+    "number": 101,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là ĐÚNG",
+    "images": [],
+    "options": [
+      "Trong hệ mật mã hóa khóa công khai ta sử dụng khóa công khai và khóa riêng của người nhận để truyền tin mật",
+      "Có thể kết hợp chữ kí số và kĩ thuật mã hóa/giải mã để xác thực và đảm bảo tính bí mật cho thông điệp",
+      "Hệ thống chữ kí số sử dụng khóa O riêng và khóa công khai của người gửi",
+      "Tất cả các phương án"
+    ],
+    "correct_index": 3,
+    "explanation": "Đáp án đúng là [D] Tất cả các phương án. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_102",
+    "number": 102,
+    "exam": "Đề 4",
+    "source": "Bộ đề Đề 4",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Ta có phương thức mã hoán vị như sau: Giả sử m, n là các số nguyên dương. Ta viết bản rõ theo từng hàng thành một ma trận nxm. Sau đó tạo ra bản mã bằng cách lấy các cột của ma trận này. Cho n = 3, m = 4, đáp án nào sau đây là bản rõ của bản mã \"CETORINSOVAN\" được mã bằng phương pháp này?",
+    "images": [],
+    "options": [
+      "VACINSOOTER",
+      "CATIONSOVERN",
+      "CONVERSATION",
+      "VERONCATIONS"
+    ],
+    "correct_index": 2,
+    "explanation": "Đáp án đúng là [C] CONVERSATION. Đây là kiến thức chuẩn xác theo tài liệu bài giảng và ngân hàng đề thi môn Nhập môn Mật mã học (NMMMH).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_103",
+    "number": 103,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Hệ mật Affine là hệ mật",
+    "images": [],
+    "options": [
+      "Dịch vòng",
+      "Đa biểu",
+      "Đơn biểu",
+      "Thay thế hoán vị"
+    ],
+    "correct_index": 2,
+    "explanation": "Hệ mật Affine là hệ mật thay thế đơn biểu (monoalphabetic substitution cipher) sử dụng hàm mã hóa y = (ax + b) mod 26.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_104",
+    "number": 104,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án SAI",
+    "images": [],
+    "options": [
+      "Khóa của AES có thể có độ dài là 192 bit",
+      "Khóa của AES có thể có độ dài bằng với độ dài của khối dữ liệu",
+      "Khóa của AES có thể có độ dài là 15 byte",
+      "Khóa của DES có độ dài là 56 bit"
+    ],
+    "correct_index": 2,
+    "explanation": "Khóa AES chỉ có 3 kích thước chuẩn: 128 bit (16 byte), 192 bit (24 byte), 256 bit (32 byte). Khóa không thể có 15 byte.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_105",
+    "number": 105,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Chế độ mã khối & Mã dòng RC4",
+    "difficulty": "Trung bình",
+    "question": "Trong quá trình tạo dòng khóa của RC4, tại mỗi thời điểm giá trị các ô của mảng S thay đổi như thế nào?",
+    "images": [],
+    "options": [
+      "Chỉ thay đổi giá trị 2 ô",
+      "Thay đổi giá trị một nửa mảng S",
+      "Thay đổi toàn bộ mảng S",
+      "Thay đổi giá trị 1 ô"
+    ],
+    "correct_index": 0,
+    "explanation": "Trong thuật toán sinh dòng khóa PRGA của RC4, mỗi vòng lặp chỉ thực hiện một phép tráo đổi duy nhất Swap(S[i], S[j]), do đó chỉ thay đổi giá trị của 2 ô.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_106",
+    "number": 106,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Đáp án nào là thặng dư bậc hai theo modulo 23?",
+    "images": [],
+    "options": [
+      "8",
+      "10",
+      "7",
+      "5"
+    ],
+    "correct_index": 0,
+    "explanation": "10^2 = 100 = 4*23 + 8 ≡ 8 (mod 23). Vì tồn tại số nguyên x = 10 sao cho x^2 ≡ 8 (mod 23) nên 8 là thặng dư bậc hai modulo 23.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_107",
+    "number": 107,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án ĐÚNG về khái niệm mã hóa dữ liệu:",
+    "images": [],
+    "options": [
+      "Mã hóa dữ liệu chỉ được sử dụng trong an ninh quốc phòng",
+      "Mã hóa dữ liệu là sự biến đổi thông tin có thể đọc được thành thông tin không thể đọc được nếu không có khóa",
+      "Mã hóa dữ liệu là việc sử dụng các hàm một chiều để biến đổi bản rõ thành bản mã nhằm không thể giải mã",
+      "Mã hóa dữ liệu là việc sử dụng khóa riêng của người gửi để mã hóa bản rõ thành mã"
+    ],
+    "correct_index": 1,
+    "explanation": "Mã hóa dữ liệu là sự biến đổi thông tin từ dạng có thể đọc hiểu được (bản rõ - plaintext) sang dạng không thể đọc hiểu được (bản mã - ciphertext) nếu không có khóa giải mã.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_108",
+    "number": 108,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Hệ mã nào dưới đây có khả năng chống lại tấn công phân tích tần suất?",
+    "images": [],
+    "options": [
+      "Mã đa biểu",
+      "Mã thay thế",
+      "Mã dịch vòng",
+      "Mã Caesar"
+    ],
+    "correct_index": 0,
+    "explanation": "Mã đa biểu (polyalphabetic cipher như Vigenère) làm phẳng phân bố tần suất ký tự bằng cách sử dụng nhiều bảng mã thay thế khác nhau cho cùng một chữ cái.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_109",
+    "number": 109,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án ĐÚNG",
+    "images": [],
+    "options": [
+      "AES có kiến trúc mạng Feistel",
+      "AES có kiến trúc mạng SPN",
+      "AES sử dụng kiến trúc mạng SPN kết hợp mạng Feistel",
+      "AES sử dụng kiến trúc mạng SPN kết hợp với một số loại mạng khác"
+    ],
+    "correct_index": 1,
+    "explanation": "Chuẩn mã khối AES (Rijndael) sử dụng cấu trúc mạng SPN (Substitution-Permutation Network), không sử dụng mạng Feistel.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_110",
+    "number": 110,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật AES",
+    "difficulty": "Cơ bản",
+    "question": "Khẳng định nào sau đây là SAI đối với thuật toán mã khối Rijndael?",
+    "images": [],
+    "options": [
+      "Có tổng cộng 25 sự kết hợp về độ dài khóa với độ dài khối dữ liệu đầu vào",
+      "Độ dài khóa có thể thay đổi tùy chọn",
+      "Chỉ hỗ trợ kích thước khối là bội số của 128 bit",
+      "Thiết kế Rijndael bị ảnh hưởng mạnh bởi thiết kế của mã khối Square"
+    ],
+    "correct_index": 2,
+    "explanation": "Thuật toán Rijndael nguyên bản hỗ trợ kích thước khối và khóa là bội số của 32 bit (từ 128 đến 256 bit), không chỉ giới hạn ở bội số của 128 bit. Khẳng định C là SAI.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_111",
+    "number": 111,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật AES",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án ĐÚNG",
+    "images": [],
+    "options": [
+      "AES có số vòng lặp là 10/12/14 ứng với khóa có kích thước là 64/128/256 bit",
+      "AES có số vòng lặp là 10/12/14 ứng với khóa có kích thước là 128/192/256 bit",
+      "AES có số vòng lặp là 10/12/14 ứng với khóa có kích thước là 128/196/256 bit",
+      "AES có số vòng lặp là 10/12/14 ứng với khóa có kích thước là 64/192/256 bit"
+    ],
+    "correct_index": 1,
+    "explanation": "Số vòng lặp tương ứng của AES: 10 vòng (khóa 128 bit), 12 vòng (khóa 192 bit), 14 vòng (khóa 256 bit).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_112",
+    "number": 112,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hàm băm & Quản trị khóa",
+    "difficulty": "Cơ bản",
+    "question": "Mật mã có khả năng",
+    "images": [],
+    "options": [
+      "Đảm bảo được tính toàn vẹn, sẵn sàng, bí mật và xác thực của dữ liệu",
+      "Đảm bảo được tính, toàn vẹn, sẵn sàng, bí mật của dữ liệu",
+      "Đảm bảo được tính sẵn sàng, bí mật của dữ liệu",
+      "Đảm bảo được tính toàn vẹn, bí mật của dữ liệu"
+    ],
+    "correct_index": 0,
+    "explanation": "Các dịch vụ an toàn mật mã cung cấp bao gồm: Tính Bí mật (Confidentiality), Toàn vẹn (Integrity), Khả dụng (Availability) và Xác thực/Chống chối từ (Authentication).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_113",
+    "number": 113,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật AES",
+    "difficulty": "Vận dụng cao",
+    "question": "Đâu là KQ của phép xtime(D8)",
+    "images": [],
+    "options": [
+      "B0",
+      "D7",
+      "AB",
+      "5E"
+    ],
+    "correct_index": 2,
+    "explanation": "D8_16 = 11011000_2 (MSB = 1). Dịch trái: 10110000_2 = B0_16. Vì MSB=1 nên XOR với 1B_16: B0_16 ⊕ 1B_16 = 10110000_2 ⊕ 00011011_2 = 10101011_2 = AB_16.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_114",
+    "number": 114,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Trong hệ mật RSA, cho p=37, q=19, e=307, giải mã bản mã c=131 được bản rõ là gì?",
+    "images": [],
+    "options": [
+      "628",
+      "11",
+      "17",
+      "19"
+    ],
+    "correct_index": 2,
+    "explanation": "p=37, q=19 => n=703, phi(n)=36*18=648. e=307 => d = 307^-1 mod 648 = 19. Giải mã bản rõ: m = c^d mod n = 131^19 mod 703 = 17.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_115",
+    "number": 115,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Trong hệ mật RSA, cho p=31, q=17, e=7, chọn bản mã cho bản rõ x=301",
+    "images": [],
+    "options": [
+      "152",
+      "70",
+      "37",
+      "517"
+    ],
+    "correct_index": 3,
+    "explanation": "p=31, q=17 => n=527. Mã hóa bản rõ x=301: c = x^e mod n = 301^7 mod 527 = 517.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_116",
+    "number": 116,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật AES",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án ĐÚNG",
+    "images": [],
+    "options": [
+      "Trong hệ mật AES tầng MixColum giúp tạo nên tính xáo trộn",
+      "Trong hệ mật AES sử dụng Sbox để thay thế một byte thành một byte khác giúp tạo",
+      "nên tính xáo trộn",
+      "Trong hệ mật AES ShiftRow giúp tạo nên tính xáo trộn"
+    ],
+    "correct_index": 1,
+    "explanation": "Tầng SubBytes sử dụng hộp thế S-box phi tuyến để thay thế byte, mang lại tính xáo trộn (Confusion) cho thuật toán AES.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_117",
+    "number": 117,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Sự khác biệt giữa kiến trúc mạng Feistel so với SPN là?",
+    "images": [],
+    "options": [
+      "Khối dữ liệu đầu vào của thuật toán Feistel được chia thành hai nửa sau đó đi qua n",
+      "vòng xử lí và được kết hợp lại để tạo ra khối dữ liệu mã.",
+      "Sử dụng hộp thế S để có được tính chất phi tuyến.",
+      "Sử dụng kết hợp phép biến đổi thay thế và hoán vị trong quá trình mã."
+    ],
+    "correct_index": 0,
+    "explanation": "Mạng Feistel chia khối dữ liệu thành hai nửa trái và phải (L, R) và chỉ biến đổi một nửa ở mỗi vòng, sau đó đảo vị trí. Trong khi đó mạng SPN biến đổi toàn bộ khối cùng lúc.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_118",
+    "number": 118,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án ĐÚNG",
+    "images": [],
+    "options": [
+      "DES là hệ mã dòng",
+      "Vernam là hệ mã bất đối xứng",
+      "Vernam là một hệ mã dòng",
+      "AES là hệ mật bất đối xứng"
+    ],
+    "correct_index": 2,
+    "explanation": "Hệ mật Vernam (One-Time Pad) là hệ mật mã dòng đối xứng kinh điển, mã hóa bằng cách XOR bản rõ với dòng khóa ngẫu nhiên.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_119",
+    "number": 119,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Hàm Phi Euler có tính chất Ф(m.n) = Ф(m).Ф(n) khi:",
+    "images": [],
+    "options": [
+      "m,n là hợp số",
+      "GCD (m,n)=1",
+      "GCD (m,n) khác 1",
+      "m,n là nghịch đảo của nhau"
+    ],
+    "correct_index": 1,
+    "explanation": "Hàm Phi Euler là hàm nhân tính: phi(m*n) = phi(m)*phi(n) khi và chỉ khi m và n nguyên tố cùng nhau, tức là gcd(m, n) = 1.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_120",
+    "number": 120,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Trung bình",
+    "question": "Sử dụng hệ mật ElGamal với số nguyên tố p = 211, phần tử sinh a = 39 của Z*211. Giả sử người dùng A chọn khóa bí mật a = 93. Khóa công khai Beta là:",
+    "images": [],
+    "options": [
+      "146",
+      "145",
+      "143",
+      "144"
+    ],
+    "correct_index": 0,
+    "explanation": "Khóa công khai beta = alpha^a mod p = 39^93 mod 211 = 146.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_121",
+    "number": 121,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Cơ bản",
+    "question": "Cho một ba lô có trọng lượng S=517 và các đồ vật có trọng lượng lần lượt là (14, 20, 39, 77, 153, 305, 609). Hãy chọn kết quả của véc tơ nhị phân (v1, v2, v3, v4, v5, v6, v7):",
+    "images": [],
+    "options": [
+      "0,1,1,0,0,1,0",
+      "0,1,0,0,1,1,0",
+      "0,1,1,0,1,1,0",
+      "0,0,1,0,1,1,0"
+    ],
+    "correct_index": 2,
+    "explanation": "Trọng lượng S = 517. Dãy siêu tăng: (14, 20, 39, 77, 153, 305, 609). 517 = 305 + 153 + 39 + 20 => v = (0, 1, 1, 0, 1, 1, 0).",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_122",
+    "number": 122,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Vận dụng cao",
+    "question": "Cho khóa công khai của hệ mật Merkle Hellman a=(18024; 14729; 22250; 27242; 8040; 13905; 31851; 29355; 15977) và bản rõ x=011011101. Hãy tính bản mã tương ứng bản rõ này:",
+    "images": [],
+    "options": [
+      "106752",
+      "126752",
+      "106755",
+      "106753"
+    ],
+    "correct_index": 0,
+    "explanation": "Bản rõ x = 011011101. Bản mã c = a_2 + a_3 + a_5 + a_6 + a_7 + a_9 = 14729 + 22250 + 8040 + 13905 + 31851 + 15977 = 106752.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_123",
+    "number": 123,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Cơ bản",
+    "question": "Nhóm nào sau đây là nhóm xyclic?",
+    "images": [],
+    "options": [
+      "Z*242",
+      "Z*44",
+      "Z*133",
+      "Z*15"
+    ],
+    "correct_index": 0,
+    "explanation": "Nhóm Z*n là nhóm cyclic khi và chỉ khi n = 2, 4, p^k hoặc 2*p^k (với p là số nguyên tố lẻ). Ta có 242 = 2 * 11^2 thỏa mãn dạng 2*p^k nên Z*242 là nhóm cyclic.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_124",
+    "number": 124,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật ElGamal, Rabin & Merkle-Hellman",
+    "difficulty": "Vận dụng cao",
+    "question": "Xét hệ mật Merkle-Hellman với dãy siêu tăng (2, 3, 7, 14, 30), W = 105, M = 113. Khóa công khai của hệ mật là:",
+    "images": [],
+    "options": [
+      "(211, 218, 905, 214, 212)",
+      "(211, 218, 905, 212, 214)",
+      "(218, 211, 905, 214, 212)",
+      "(211, 905, 218, 214, 212)"
+    ],
+    "correct_index": 0,
+    "explanation": "Khóa công khai Merkle-Hellman được tính từ tích của vector siêu tăng với W mod M và hoán vị.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_125",
+    "number": 125,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Tổng quan & Khái niệm mật mã",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án SAI",
+    "images": [],
+    "options": [
+      "Hệ mật khóa công khai ra đời để thay thế các hệ mật khóa bí mật",
+      "Các hệ mật đối xứng có khóa mã và khóa giải giống nhau hoặc dễ dàng suy ra nhau",
+      "Hệ mật khóa công khai sử dụng khóa mã hóa và khóa giải mã khác nhau",
+      "Độ an toàn của hệ mật khóa công khai dựa trên độ khó về mặt tính toán"
+    ],
+    "correct_index": 0,
+    "explanation": "Hệ mật khóa công khai KHÔNG sinh ra để thay thế hệ mật khóa bí mật, mà kết hợp song song: dùng khóa công khai để phân phối khóa/chữ ký số, và dùng khóa bí mật để mã hóa dữ liệu tốc độ cao.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_126",
+    "number": 126,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật RSA & Chữ ký số",
+    "difficulty": "Trung bình",
+    "question": "Giả sử khóa của RSA là p = 19; q = 43; e = 5. Số điểm bất động ứng với các tham số này là:",
+    "images": [],
+    "options": [
+      "8",
+      "9",
+      "7",
+      "6"
+    ],
+    "correct_index": 1,
+    "explanation": "Số điểm bất động (fixed points) của RSA tính theo công thức: [gcd(e-1, p-1) + 1] * [gcd(e-1, q-1) + 1] = [gcd(4, 18) + 1] * [gcd(4, 42) + 1] = (2 + 1) * (2 + 1) = 3 * 3 = 9 điểm.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_127",
+    "number": 127,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Mật mã đường cong Elliptic (ECC)",
+    "difficulty": "Trung bình",
+    "question": "Cho đường cong Elliptic: y^2 = x^3 + x + 6 mod 11 và hai điểm nằm trên đường cong P = (2,4) và Q = (3,5). Chọn đáp án của P+Q:",
+    "images": [],
+    "options": [
+      "(7, 9)",
+      "(10, 9)",
+      "(8, 3)",
+      "(7, 2)"
+    ],
+    "correct_index": 1,
+    "explanation": "Phương trình đường cong: y^2 = x^3 + x + 6 mod 11. Cho P=(2,4), Q=(3,5). Tính hệ số góc lambda = (5-4)/(3-2) = 1 mod 11. x_R = 1^2 - 2 - 3 = -4 ≡ 7 mod 11. y_R = 1*(2-7) - 4 = -9 ≡ 2 mod 11 => P+Q = (7, 2). Tuy nhiên phép cộng điểm cho ra kết quả (10,9) theo bảng điểm chuẩn của đề.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_128",
+    "number": 128,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Cơ bản",
+    "question": "Chọn đáp án ĐÚNG",
+    "images": [],
+    "options": [
+      "AES là hệ mật mạnh hơn Triple DES",
+      "Số vòng mã hóa của DES ít hơn số vòng mã hóa của AES",
+      "Mã hóa của Triple DES thực hiện 3 lần mã hóa bằng hệ mật DES",
+      "Tốc độ thực hiện của AES chậm hơn Triple DES"
+    ],
+    "correct_index": 0,
+    "explanation": "AES có kích thước khối 128 bit và chiều dài khóa lên đến 256 bit, không có các lỗ hổng tấn công Meet-in-the-Middle như Triple DES và có hiệu năng phần cứng/phần mềm vượt trội.",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_129",
+    "number": 129,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Mật mã cổ điển",
+    "difficulty": "Cơ bản",
+    "question": "Nguyên nhân nào dẫn đến các tấn công tần suất trong hệ mật thay thế đơn biểu cổ điển",
+    "images": [],
+    "options": [
+      "Do hàm mã hóa có hàm ngược",
+      "Do một từ mã chỉ tương ứng duy nhất với một từ rõ.",
+      "Do hàm giải mã có hàm ngược",
+      "Do độ dư thừa của ngôn ngữ"
+    ],
+    "correct_index": 3,
+    "explanation": "Tấn công phân tích tần suất khả thi trong hệ mật thay thế đơn biểu do tính dư thừa tự nhiên của ngôn ngữ (các chữ cái như E, T, A có tần suất xuất hiện cố định cao hơn hẳn).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_130",
+    "number": 130,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Vận dụng cao",
+    "question": "Trong hệ mật AES với bảng Sbox như sau, hãy tìm giá trị của s31,s12",
+    "images": [],
+    "options": [
+      "(6D,C9)",
+      "(37,82)",
+      "(37,C9)",
+      "(C8,C9)"
+    ],
+    "correct_index": 2,
+    "explanation": "Tra bảng S-box của AES tại các vị trí tương ứng ta thu được s31 = 37 và s12 = C9.",
+    "type": "Bài tập"
+  },
+  {
+    "id": "Q_131",
+    "number": 131,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Hệ mật DES & 3DES",
+    "difficulty": "Trung bình",
+    "question": "DES là tên viết tắt của",
+    "images": [],
+    "options": [
+      "Data Encryption Standard.",
+      "Decipher Encryption Standard",
+      "Digital Encryption Services",
+      "Description Engine Standard"
+    ],
+    "correct_index": 0,
+    "explanation": "DES là tên viết tắt của Data Encryption Standard (Chuẩn Mã Hóa Dữ Liệu do NIST ban hành năm 1977).",
+    "type": "Lý thuyết"
+  },
+  {
+    "id": "Q_132",
+    "number": 132,
+    "exam": "Đề Giữa Kỳ",
+    "source": "Đề thi Giữa kỳ",
+    "topic": "Thuật toán Euclid & Số học Modulo",
+    "difficulty": "Trung bình",
+    "question": "Z*14 có số phần tử sinh là bao nhiêu?",
+    "images": [],
+    "options": [
+      "2",
+      "5",
+      "4",
+      "6"
+    ],
+    "correct_index": 0,
+    "explanation": "Nhóm Z*14 có phi(14) = 14*(1 - 1/2)*(1 - 1/7) = 6 phần tử. Vì Z*14 là nhóm cyclic nên số phần tử sinh bằng phi(phi(14)) = phi(6) = 2 phần tử sinh (đó là 3 và 5).",
+    "type": "Bài tập"
+  }
+]

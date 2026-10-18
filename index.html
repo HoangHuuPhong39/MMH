@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ Thống Ôn Thi & Trắc Nghiệm Nhập Môn Mật Mã Học (NMMMH)</title>
+  <meta name="description" content="Nền tảng ôn tập, làm bài thi thử trắc nghiệm môn Nhập môn Mật mã học với ngân hàng đề tổng hợp, phân loại chuyên đề, lời giải chi tiết và lọc trùng lặp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="switchView('dashboard')">
+      <div class="brand-icon">🔐</div>
+      <div>
+        <span>NMMMH Exam</span>
+        <span class="brand-badge">KMA Master</span>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <button class="nav-tab active" id="tab-dashboard" onclick="switchView('dashboard')">
+        <span>🏠 Trang chủ</span>
+      </button>
+      <button class="nav-tab" id="tab-theory-guide" onclick="switchView('theory-guide')">
+        <span>📚 Lý thuyết 5 chương</span>
+      </button>
+      <button class="nav-tab" id="tab-practice" onclick="switchView('practice')">
+        <span>📖 Ôn tập theo đề</span>
+      </button>
+      <button class="nav-tab" id="tab-exam" onclick="switchView('exam')">
+        <span>⏱️ Thi thử bấm giờ</span>
+      </button>
+      <button class="nav-tab" id="tab-mistakes" onclick="switchView('mistakes')">
+        <span>⚠️ Câu hay sai</span>
+        <span class="badge" id="nav-mistakes-count">0</span>
+      </button>
+      <button class="nav-tab" id="tab-search" onclick="switchView('search')">
+        <span>🔍 Tra cứu nhanh</span>
+      </button>
+    </div>
+
+    <div class="nav-actions">
+      <button class="theme-toggle-btn" id="btn-sound-toggle" title="Bật/Tắt âm thanh hiệu ứng" onclick="toggleSound()">
+        🔊
+      </button>
+      <button class="theme-toggle-btn" id="btn-theme-toggle" title="Đổi giao diện Sáng/Tối" onclick="toggleTheme()">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Application Body -->
+  <main class="main-content">
+
+    <!-- ==================== VIEW 1: DASHBOARD ==================== -->
+    <section id="view-dashboard" class="app-view active">
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <h1 class="hero-title">Ôn Thi Nhập Môn Mật Mã Học (NMMMH)</h1>
+        <p class="hero-desc">
+          Hệ thống tổng hợp và lọc trùng toàn bộ ngân hàng câu hỏi ôn tập, đề thi mẫu và ảnh chụp màn hình các khóa. Hỗ trợ ôn luyện theo từng đề, làm bài thi thử bấm giờ, xem lời giải chi tiết và luyện các câu hay sai.
+        </p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="startPracticeExam('all')">
+            🚀 Ôn tập toàn bộ (132 câu)
+          </button>
+          <button class="btn btn-secondary" onclick="startPracticeByType('Lý thuyết')">
+            📖 Bài Luyện 1: Lý Thuyết (80 câu)
+          </button>
+          <button class="btn btn-secondary" onclick="startPracticeByType('Bài tập')">
+            🧮 Bài Luyện 2: Bài Tập (52 câu)
+          </button>
+          <button class="btn btn-secondary" onclick="startQuickExam()">
+            ⚡ Thi thử ngẫu nhiên 40 câu
+          </button>
+          <button class="btn btn-secondary" onclick="switchView('theory-guide')">
+            📚 Đọc lý thuyết 5 chương
+          </button>
+          <button class="btn btn-secondary" onclick="switchView('search')">
+            🔍 Tra cứu câu hỏi
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Stats Row -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon indigo">📚</div>
+          <div class="stat-info">
+            <h3 id="stat-total-q">132</h3>
+            <p>Câu hỏi độc bản (đã lọc trùng)</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon cyan">📑</div>
+          <div class="stat-info">
+            <h3 id="stat-total-exams">6</h3>
+            <p>Bộ đề thi & tài liệu mẫu</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon emerald">🎯</div>
+          <div class="stat-info">
+            <h3 id="stat-learned-count">0</h3>
+            <p>Câu đã luyện tập</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon rose">⭐</div>
+          <div class="stat-info">
+            <h3 id="stat-bookmarked-count">0</h3>
+            <p>Câu đánh dấu quan trọng</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== 2 BÀI LUYỆN TẬP CHUYÊN SÂU ==================== -->
+      <div class="section-header">
+        <h2 class="section-title">⚡ 2 Bài Luyện Tập Chuyên Sâu Theo Định Dạng Đề</h2>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">Tách riêng 2 lộ trình: Nắm chắc Lý thuyết & Thành thạo Bài tập tính toán</span>
+      </div>
+
+      <div class="practice-sets-grid">
+        <!-- Card 1: Lý Thuyết -->
+        <div class="practice-set-card theory-card">
+          <div>
+            <div class="set-card-header">
+              <div class="set-icon-wrapper theory">📖</div>
+              <div>
+                <span class="set-badge badge-theory">BÀI LUYỆN TẬP 1</span>
+                <h3 class="set-title">Chuyên Đề Toàn Bộ Câu Hỏi Lý Thuyết</h3>
+              </div>
+            </div>
+            <p class="set-desc" style="margin-top: 1rem;">
+              Tổng hợp <strong>80 câu hỏi lý thuyết</strong> trọng tâm: phân loại mật mã đối xứng & bất đối xứng, kiến trúc mạng Feistel vs SPN, các chế độ mã khối (ECB, CBC, OFB, CTR), đặc tả số vòng và kích thước AES/DES/Rijndael, hàm băm một chiều SHA/MD5, chữ ký số, chứng thư CA và các câu nhận định đúng/sai.
+            </p>
+          </div>
+
+          <div>
+            <div class="set-stats-bar">
+              <div class="set-stat-item">
+                <span class="set-stat-num" id="theory-total-count">55</span>
+                <span class="set-stat-lbl">Tổng câu</span>
+              </div>
+              <div class="set-stat-item">
+                <span class="set-stat-num" id="theory-answered-count">0</span>
+                <span class="set-stat-lbl">Đã ôn</span>
+              </div>
+              <div class="set-stat-item">
+                <span class="set-stat-num" id="theory-percent">0%</span>
+                <span class="set-stat-lbl">Tiến độ</span>
+              </div>
+            </div>
+            <div class="set-progress-line" style="margin-top: 0.5rem; margin-bottom: 1.25rem;">
+              <div class="set-progress-fill theory" id="theory-progress-bar" style="width: 0%;"></div>
+            </div>
+
+            <div class="set-actions">
+              <button class="btn btn-primary" onclick="startPracticeByType('Lý thuyết')">
+                📖 Ôn Luyện Lý Thuyết (80 câu)
+              </button>
+              <button class="btn btn-secondary" onclick="startExamByType('Lý thuyết', 40)">
+                ⏱️ Thi Thử Lý Thuyết (40 câu)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Bài Tập Tính Toán -->
+        <div class="practice-set-card exercise-card">
+          <div>
+            <div class="set-card-header">
+              <div class="set-icon-wrapper exercise">🧮</div>
+              <div>
+                <span class="set-badge badge-exercise">BÀI LUYỆN TẬP 2</span>
+                <h3 class="set-title">Chuyên Đề Toàn Bộ Bài Tập & Tính Toán</h3>
+              </div>
+            </div>
+            <p class="set-desc" style="margin-top: 1rem;">
+              Tổng hợp <strong>52 bài tập tính toán</strong>: thuật toán Euclid mở rộng, tìm nghịch đảo nhân modulo, tính cấp phần tử, phần tử sinh, phi Euler, thặng dư bậc hai mod p, bảng thế S-box, phép nhân đa thức xtime trên GF(2^8), giải mã & mã hóa RSA, ElGamal, Rabin, Hill, Caesar, Vigenere, đường cong Elliptic...
+            </p>
+          </div>
+
+          <div>
+            <div class="set-stats-bar">
+              <div class="set-stat-item">
+                <span class="set-stat-num" id="exercise-total-count">78</span>
+                <span class="set-stat-lbl">Tổng câu</span>
+              </div>
+              <div class="set-stat-item">
+                <span class="set-stat-num" id="exercise-answered-count">0</span>
+                <span class="set-stat-lbl">Đã ôn</span>
+              </div>
+              <div class="set-stat-item">
+                <span class="set-stat-num" id="exercise-percent">0%</span>
+                <span class="set-stat-lbl">Tiến độ</span>
+              </div>
+            </div>
+            <div class="set-progress-line" style="margin-top: 0.5rem; margin-bottom: 1.25rem;">
+              <div class="set-progress-fill exercise" id="exercise-progress-bar" style="width: 0%;"></div>
+            </div>
+
+            <div class="set-actions">
+              <button class="btn btn-primary" onclick="startPracticeByType('Bài tập')">
+                🧮 Ôn Luyện Bài Tập (52 câu)
+              </button>
+              <button class="btn btn-secondary" onclick="startExamByType('Bài tập', 40)">
+                ⏱️ Thi Thử Bài Tập (40 câu)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam Decks Section -->
+      <div class="section-header">
+        <h2 class="section-title">📂 Danh sách các bộ đề ôn thi</h2>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">Chọn bộ đề để bắt đầu ôn hoặc thi thử</span>
+      </div>
+
+      <div class="exams-grid" id="exams-grid-container">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Topics / Categories Cloud -->
+      <div class="section-header">
+        <h2 class="section-title">🏷️ Ôn tập theo chuyên đề kiến thức</h2>
+      </div>
+      <div class="topics-cloud" id="topics-cloud-container">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW: THEORY BY CHAPTER ==================== -->
+    <section id="view-theory-guide" class="app-view">
+      <!-- Theory Hero Banner -->
+      <div class="hero-banner" style="margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="exam-badge badge-purple" style="margin-bottom: 0.5rem; display: inline-block;">Giáo Trình Chuẩn KMA & Đề Cương Ôn Thi</span>
+            <h1 class="hero-title" style="font-size: 1.85rem; margin-bottom: 0.5rem;">📚 Cẩm Nang Lý Thuyết & Công Thức Từng Chương</h1>
+            <p class="hero-desc" style="max-width: 820px; margin-bottom: 0.75rem;">
+              Tổng hợp toàn bộ kiến thức trọng tâm từ slide bài giảng chính thức, tài liệu 5 chương và Ma trận đề thi chuẩn Nhập môn Mật mã học (NMMMH). Phân loại chi tiết công thức, thuật toán từng bước, bảng so sánh và các câu hỏi giảng viên hay gài bẫy trắc nghiệm.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="startPracticeExam('all')">
+              🚀 Vào luyện đề ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Theory Search Input -->
+        <div class="search-input-wrapper" style="margin-top: 1rem; max-width: 550px;">
+          <span class="search-icon">🔎</span>
+          <input type="text" id="theory-search-input" class="search-input" placeholder="Tìm nhanh trong lý thuyết (ví dụ: Feistel, S-Box, xtime, Euclid, Diffie-Hellman, Blom, Merkle...)" oninput="filterTheoryContent(this.value)">
+        </div>
+      </div>
+
+      <!-- Chapter Navigation Tabs (Sticky) -->
+      <div class="theory-nav-bar" id="theory-nav-bar">
+        <button class="theory-nav-btn active" onclick="showChapter('all')">
+          📌 Tất cả 5 Chương
+        </button>
+        <button class="theory-nav-btn" onclick="showChapter('ch1')">
+          Chương 1: Tổng Quan & Cổ Điển
+        </button>
+        <button class="theory-nav-btn" onclick="showChapter('ch2')">
+          Chương 2: Khóa Bí Mật (Mã Khối & Dòng)
+        </button>
+        <button class="theory-nav-btn" onclick="showChapter('ch3')">
+          Chương 3: Toán Học & Khóa Công Khai
+        </button>
+        <button class="theory-nav-btn" onclick="showChapter('ch4')">
+          Chương 4: Hàm Băm & Chữ Ký Số
+        </button>
+        <button class="theory-nav-btn" onclick="showChapter('ch5')">
+          Chương 5: Phân Phối & Thỏa Thuận Khóa
+        </button>
+        <button class="theory-nav-btn matrix-nav" onclick="showChapter('matran')">
+          🎯 Ma Trận Đề Thi (40 câu)
+        </button>
+      </div>
+
+      <!-- Main Theory Container -->
+      <div class="theory-container" id="theory-container">
+
+        <!-- ==================== CHƯƠNG 1 ==================== -->
+        <div class="chapter-card" id="chapter-ch1">
+          <div class="chapter-header">
+            <div class="chapter-title-wrap">
+              <span class="chapter-badge badge-blue">CHƯƠNG 1</span>
+              <h2 class="chapter-title">Tổng Quan Về Mật Mã Học & Các Hệ Mật Cổ Điển</h2>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="filterPracticeByTopic('Mật mã cổ điển')">
+              📝 Luyện trắc nghiệm Chương 1 ➔
+            </button>
+          </div>
+
+          <div class="chapter-content">
+            <!-- 1.1 An Toàn Thông Tin & Mô Hình Hệ Mật -->
+            <div class="theory-section">
+              <h3 class="section-heading">1.1. Khái Niệm An Toàn Thông Tin & Phân Loại Mật Mã</h3>
+              <p><strong>An toàn thông tin (ATTT):</strong> Là sự bảo vệ thông tin và các hệ thống thông tin tránh bị truy nhập, sử dụng, tiết lộ, gián đoạn, sửa đổi hoặc phá hoại trái phép.</p>
+              
+              <div class="highlight-grid">
+                <div class="highlight-item">
+                  <div class="highlight-icon">🔒</div>
+                  <div>
+                    <strong>Tính Bí Mật (Confidentiality)</strong>
+                    <p>Thông tin chỉ được tiếp cận bởi những đối tượng được cấp phép. <em>Kỹ thuật đảm bảo:</em> <strong>Mã hóa (Encryption)</strong>.</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">🛡️</div>
+                  <div>
+                    <strong>Tính Toàn Vẹn (Integrity)</strong>
+                    <p>Thông tin không bị sửa đổi, xóa hoặc chèn trái phép. <em>Kỹ thuật đảm bảo:</em> <strong>Hàm băm, MAC, Chữ ký số</strong>.</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">⚡</div>
+                  <div>
+                    <strong>Tính Khả Dụng (Availability)</strong>
+                    <p>Hệ thống và thông tin luôn sẵn sàng khi người dùng được cấp phép yêu cầu truy cập.</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">✍️</div>
+                  <div>
+                    <strong>Xác Thực & Chống Chối Bỏ (Authentication & Non-repudiation)</strong>
+                    <p>Xác minh danh tính nguồn gốc thông điệp và người gửi không thể phủ nhận việc đã gửi tin. <em>Kỹ thuật đảm bảo:</em> <strong>Chữ ký số, MAC</strong>.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exam-trap-box">
+                <div class="trap-title">⚠️ BẪY TRẮC NGHIỆM TRONG SLIDE (Có Trong Đề Thi)</div>
+                <p><strong>Câu hỏi:</strong> Dịch vụ nào chỉ có thể dùng <em>Chữ ký số</em> mà <em>không thể</em> dùng Hàm băm hay MAC để thay thế?</p>
+                <p>👉 <strong>Đáp án:</strong> <strong>Tính Chống Chối Bỏ (Non-repudiation)</strong>. Vì MAC dùng khóa đối xứng chung giữa 2 bên nên người nhận cũng có thể tự tạo bản tin → không chống chối bỏ được.</p>
+              </div>
+
+              <p style="margin-top: 1rem;"><strong>Định nghĩa toán học của Hệ Mật Mã:</strong> Một hệ mật mã là bộ 5 thành phần (P, C, K, E, D) trong đó:</p>
+              <ul class="theory-bullets">
+                <li>P (Plaintext): Không gian bản rõ.</li>
+                <li>C (Ciphertext): Không gian bản mã.</li>
+                <li>K (Key): Không gian khóa.</li>
+                <li>E (Encryption): Tập các hàm mã hóa e<sub>k</sub>: P → C với k ∈ K.</li>
+                <li>D (Decryption): Tập các hàm giải mã d<sub>k</sub>: C → P với k ∈ K.</li>
+                <li>Điều kiện đúng đắn: <b>∀ x ∈ P, ∀ k ∈ K: d<sub>k</sub>(e<sub>k</sub>(x)) = x</b>.</li>
+              </ul>
+            </div>
+
+            <!-- 1.2 Các Hệ Mật Cổ Điển -->
+            <div class="theory-section">
+              <h3 class="section-heading">1.2. Các Hệ Mật Mã Cổ Điển (Nguyên Lý & Công Thức)</h3>
+              
+              <div class="theory-card-sub">
+                <h4>1. Mã Dịch Vòng (Shift / Caesar Cipher)</h4>
+                <p>Bảng chữ cái tiếng Anh gồm 26 ký tự (m = 26). Gán A=0, B=1, ..., Z=25.</p>
+                <div class="formula-box">
+                  <strong>Mã hóa:</strong> <b>y = e<sub>k</sub>(x) = (x + k) mod 26</b> <br>
+                  <strong>Giải mã:</strong> <b>x = d<sub>k</sub>(y) = (y - k) mod 26</b>
+                </div>
+                <p>Số khóa khả dĩ: |K| = 26. Dễ dàng bị thám mã bằng <em>vét cạn (Brute-force)</em>.</p>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>2. Hệ Mật Affine</h4>
+                <p>Khóa là cặp k = (a, b) với a, b ∈ ℤ<sub>26</sub> và điều kiện bắt buộc: gcd(a, 26) = 1.</p>
+                <div class="formula-box">
+                  <strong>Mã hóa:</strong> y = (a · x + b) mod 26 <br>
+                  <strong>Giải mã:</strong> x = a<sup>-1</sup> · (y - b) mod 26
+                </div>
+                <p>Các giá trị a thỏa mãn gcd(a, 26) = 1 gồm 12 số: {1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25}.</p>
+                <p>Tổng số khóa của Affine: |K| = φ(26) × 26 = 12 × 26 = 312 khóa.</p>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>3. Hệ Mật Thay Thế Đa Biểu Vigenère</h4>
+                <p>Sử dụng khóa là một từ khóa có độ dài m: K = (k<sub>1</sub>, k<sub>2</sub>, ..., k<sub>m</sub>). Lặp lại khóa cho khớp chiều dài bản rõ.</p>
+                <div class="formula-box">
+                  <strong>Mã hóa:</strong> c<sub>i</sub> = (p<sub>i</sub> + k<sub>i mod m</sub>) mod 26 <br>
+                  <strong>Giải mã:</strong> p<sub>i</sub> = (c<sub>i</sub> - k<sub>i mod m</sub>) mod 26
+                </div>
+                <p>Đặc điểm: Cùng một chữ cái trong bản rõ tại các vị trí khác nhau có thể được mã thành các chữ cái khác nhau → <strong>Làm phẳng biểu đồ tần suất</strong>, chống phân tích tần suất tốt hơn thay thế đơn biểu.</p>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>4. Hệ Mật Khóa Chạy (Autokey Cipher) & Vernam OTP</h4>
+                <p><strong>Khóa chạy (Autokey):</strong> Khóa ban đầu là một từ ngắn (mầm khóa), sau đó khóa tự sinh bằng chính các ký tự của bản rõ ghép nối vào sau.</p>
+                <div class="formula-box">
+                  Dòng khóa: K = k<sub>1</sub> k<sub>2</sub> ... k<sub>m</sub> p<sub>1</sub> p<sub>2</sub> p<sub>3</sub> ... <br>
+                  c<sub>i</sub> = (p<sub>i</sub> + k<sub>i</sub>) mod 26
+                </div>
+                <p><strong>Hệ mật Vernam / OTP (One-Time Pad):</strong> Khóa ngẫu nhiên hoàn toàn, có chiều dài đúng bằng bản rõ, chỉ dùng DUY NHẤT một lần.</p>
+                <p>👉 <strong>Độ an toàn:</strong> Đạt độ an toàn tuyệt đối về mặt lý thuyết thông tin (Shannon Perfect Secrecy). Nhược điểm: Chiều dài khóa bằng chiều dài bản rõ, vấn đề phân phối khóa cực kỳ khó khăn.</p>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>5. Hệ Mật Hill (Mã Hóa Ma Trận)</h4>
+                <p>Chia bản rõ thành các khối m ký tự: X = (x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>m</sub>). Khóa là ma trận vuông cấp m × m: K = (k<sub>ij</sub>).</p>
+                <div class="formula-box">
+                  <strong>Mã hóa:</strong> Y = X · K mod 26 <br>
+                  <strong>Giải mã:</strong> X = Y · K<sup>-1</sup> mod 26
+                </div>
+                <p>Điều kiện tồn tại ma trận nghịch đảo K<sup>-1</sup>: gcd(det(K), 26) = 1.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== CHƯƠNG 2 ==================== -->
+        <div class="chapter-card" id="chapter-ch2">
+          <div class="chapter-header">
+            <div class="chapter-title-wrap">
+              <span class="chapter-badge badge-emerald">CHƯƠNG 2</span>
+              <h2 class="chapter-title">Hệ Mật Mã Khóa Bí Mật (Mã Khối & Mã Dòng)</h2>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="filterPracticeByTopic('Hệ mật AES')">
+              📝 Luyện trắc nghiệm Chương 2 ➔
+            </button>
+          </div>
+
+          <div class="chapter-content">
+            <!-- 2.1 Kiến trúc mã khối: Feistel vs SPN -->
+            <div class="theory-section">
+              <h3 class="section-heading">2.1. Kiến Trúc Mã Khối: Mạng Feistel & Mạng SPN</h3>
+              
+              <div class="table-responsive">
+                <table class="comparative-table">
+                  <thead>
+                    <tr>
+                      <th>Đặc Điểm So Sánh</th>
+                      <th>Mạng Feistel (Ví dụ: DES)</th>
+                      <th>Mạng SPN (Ví dụ: AES, SAFER)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Cơ chế biến đổi</strong></td>
+                      <td>Chia khối làm 2 nửa (L<sub>i</sub>, R<sub>i</sub>). Chỉ một nửa được biến đổi qua hàm vòng f:<br>L<sub>i</sub> = R<sub>i-1</sub><br>R<sub>i</sub> = L<sub>i-1</sub> ⊕ f(R<sub>i-1</sub>, K<sub>i</sub>)</td>
+                      <td>Toàn bộ khối được biến đổi đồng thời qua các tầng: Thay thế (S-box) → Hoán vị/Khuếch tán (P-box/MixColumns).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Tính thuận nghịch của hàm f</strong></td>
+                      <td>Hàm f <strong>không cần thuận nghịch</strong> (không cần có nghịch đảo).</td>
+                      <td>Các phép biến đổi <strong>bắt buộc phải có phép toán nghịch đảo</strong> để giải mã.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Quy trình Giải mã</strong></td>
+                      <td>Hoàn toàn giống mã hóa, chỉ cần đảo ngược thứ tự các khóa vòng (K<sub>16</sub> → K<sub>1</sub>). Rất dễ cài đặt phần cứng.</td>
+                      <td>Cần thiết kế bộ giải mã riêng với các phép biến đổi ngược (InvSubBytes, InvShiftRows, InvMixColumns).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2.2 Thuật toán DES & 3DES -->
+            <div class="theory-section">
+              <h3 class="section-heading">2.2. Chuẩn Mã Hóa Dữ Liệu DES & Biến Thể Triple-DES</h3>
+              <ul class="theory-bullets">
+                <li><strong>Kích thước khối bản rõ/bản mã:</strong> 64 bit.</li>
+                <li><strong>Kích thước khóa:</strong> 64 bit trong đó <strong>56 bit khóa thực tế</strong> và 8 bit kiểm tra chẵn lẻ (parity bit tại các vị trí 8, 16, 24, 32, 40, 48, 56, 64).</li>
+                <li><strong>Số vòng lặp Feistel:</strong> 16 vòng.</li>
+                <li><strong>Hàm vòng f(R<sub>i-1</sub>, K<sub>i</sub>):</strong>
+                  <ol>
+                    <li>Bảng mở rộng E: Mở rộng R<sub>i-1</sub> từ 32 bit lên 48 bit.</li>
+                    <li>XOR với khóa vòng K<sub>i</sub> (48 bit).</li>
+                    <li>Đi qua <strong>8 hộp thế S<sub>1</sub> ... S<sub>8</sub></strong>: Mỗi hộp nhận 6 bit đầu vào → xuất ra 4 bit (giảm từ 48 bit về 32 bit). Bit 1 và 6 là số hàng, bit 2,3,4,5 là số cột.</li>
+                    <li>Hoán vị P: Xáo trộn 32 bit trước khi XOR với L<sub>i-1</sub>.</li>
+                  </ol>
+                </li>
+                <li><strong>Sinh khóa vòng:</strong> Khóa 64 bit qua PC-1 → 56 bit (chia thành C<sub>0</sub>, D<sub>0</sub> mỗi nửa 28 bit). Dịch vòng trái (1 hoặc 2 vị trí theo từng vòng). Qua PC-2 → nén thành khóa vòng K<sub>i</sub> (48 bit).</li>
+                <li><strong>Biến thể Triple-DES (3DES):</strong>
+                  <div class="formula-box">
+                    <b>C = E<sub>K3</sub>(D<sub>K2</sub>(E<sub>K1</sub>(P)))</b> (Chế độ EDE: Encrypt - Decrypt - Encrypt)<br>
+                    - Sử dụng 3 khóa độc lập: Chiều dài khóa 3 × 56 = 168 bit.<br>
+                    - Sử dụng 2 khóa (K<sub>1</sub> = K<sub>3</sub>): Chiều dài khóa 112 bit. Chống tấn công Meet-in-the-Middle đòi hỏi 2<sup>112</sup> phép toán.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2.3 Chuẩn AES (Rijndael) -->
+            <div class="theory-section">
+              <h3 class="section-heading">2.3. Chuẩn Mã Khối Nâng Cao AES (Rijndael)</h3>
+              <p>AES là mã khối đối xứng cấu trúc SPN, khối dữ liệu luôn là <strong>128 bit (16 byte sắp thành ma trận trạng thái 4 × 4)</strong>.</p>
+              
+              <div class="table-responsive">
+                <table class="comparative-table">
+                  <thead>
+                    <tr>
+                      <th>Phiên Bản AES</th>
+                      <th>Kích Thước Khóa</th>
+                      <th>Số Vòng Lặp (N<sub>r</sub>)</th>
+                      <th>Kích Thước Khóa Mở Rộng</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>AES-128</td><td>128 bit (16 byte / 4 từ)</td><td>10 vòng</td><td>176 byte (44 từ 32-bit: w[0] ... w[43])</td></tr>
+                    <tr><td>AES-192</td><td>192 bit (24 byte / 6 từ)</td><td>12 vòng</td><td>208 byte (52 từ 32-bit: w[0] ... w[51])</td></tr>
+                    <tr><td>AES-256</td><td>256 bit (32 byte / 8 từ)</td><td>14 vòng</td><td>240 byte (60 từ 32-bit: w[0] ... w[59])</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 style="margin-top: 1.25rem;">4 Phép Biến Đổi Trong Mỗi Vòng Của AES:</h4>
+              <ul class="theory-bullets">
+                <li><strong>1. SubBytes (Thay thế byte):</strong> Biến đổi phi tuyến độc lập từng byte qua hộp S-box được xây dựng từ phép lấy nghịch đảo trên trường GF(2<sup>8</sup>) kết hợp biến đổi afin. Đảm bảo tính chống thám mã vi sai và tuyến tính.</li>
+                <li><strong>2. ShiftRows (Dịch hàng):</strong> Dịch vòng các hàng của ma trận trạng thái. Hàng 0 không dịch, Hàng 1 dịch trái 1 byte, Hàng 2 dịch trái 2 byte, Hàng 3 dịch trái 3 byte.</li>
+                <li><strong>3. MixColumns (Trộn cột):</strong> Nhân mỗi cột của ma trận trạng thái với ma trận đa thức cố định trên GF(2<sup>8</sup>). <em>Lưu ý quan trọng: Vòng cuối cùng N<sub>r</sub> KHÔNG thực hiện phép MixColumns.</em></li>
+                <li><strong>4. AddRoundKey (Cộng khóa vòng):</strong> XOR từng byte của ma trận trạng thái với khóa vòng tương ứng. Đây là phép biến đổi duy nhất có sự tham gia của khóa bí mật.</li>
+              </ul>
+
+              <div class="formula-box">
+                <strong>Toán học trên trường Galois GF(2<sup>8</sup>) trong AES:</strong><br>
+                - Đa thức tối giản: m(x) = x<sup>8</sup> + x<sup>4</sup> + x<sup>3</sup> + x + 1 (tương ứng mã hex 0x11B).<br>
+                - Phép nhân với 2 (hàm xtime(b)): Dịch trái 1 bit (b &lt;&lt; 1). Nếu bit cao nhất (MSB) trước khi dịch là 1, ta XOR kết quả với 0x1B.<br>
+                <em>Ví dụ:</em> xtime(91<sub>16</sub>) → 91<sub>16</sub> = 10010001<sub>2</sub> (MSB = 1). Dịch trái được 00100010<sub>2</sub> = 22<sub>16</sub>. XOR với 1B<sub>16</sub> → 22<sub>16</sub> ⊕ 1B<sub>16</sub> = 39<sub>16</sub>.
+              </div>
+            </div>
+
+            <!-- 2.4 Chế độ hoạt động mã khối -->
+            <div class="theory-section">
+              <h3 class="section-heading">2.4. So Sánh 5 Chế Độ Hoạt Động Của Mã Khối</h3>
+              <div class="table-responsive">
+                <table class="comparative-table">
+                  <thead>
+                    <tr>
+                      <th>Chế Độ</th>
+                      <th>Công Thức Mã Hóa</th>
+                      <th>Sử Dụng IV?</th>
+                      <th>Lan Truyền Lỗi</th>
+                      <th>Ưu / Nhược Điểm Nổi Bật</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>ECB</strong> (Electronic Codebook)</td>
+                      <td>C<sub>i</sub> = E<sub>K</sub>(P<sub>i</sub>)</td>
+                      <td>Không</td>
+                      <td>Không lan truyền sang khối khác</td>
+                      <td>Hai khối rõ giống nhau cho ra hai khối mã giống nhau → <strong>Lộ cấu trúc thông điệp</strong>. Không an toàn cho dữ liệu lớn.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>CBC</strong> (Cipher Block Chaining)</td>
+                      <td>C<sub>i</sub> = E<sub>K</sub>(P<sub>i</sub> ⊕ C<sub>i-1</sub>) (C<sub>0</sub> = IV)</td>
+                      <td>Có (ngẫu nhiên)</td>
+                      <td>Lỗi 1 bit ở C<sub>i</sub> làm hỏng P<sub>i</sub> và lỗi 1 bit ở P<sub>i+1</sub></td>
+                      <td>Khối sau phụ thuộc khối trước → <strong>Không thể mã hóa song song</strong>. Phổ biến nhất truyền thống.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>CFB</strong> (Cipher Feedback)</td>
+                      <td>C<sub>i</sub> = P<sub>i</sub> ⊕ E<sub>K</sub>(C<sub>i-1</sub>) (C<sub>0</sub> = IV)</td>
+                      <td>Có</td>
+                      <td>Lan truyền sang các khối sau</td>
+                      <td>Mã dòng tự đồng bộ. Cả mã hóa và giải mã đều <strong>chỉ dùng hàm mã hóa E</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>OFB</strong> (Output Feedback)</td>
+                      <td>O<sub>i</sub> = E<sub>K</sub>(O<sub>i-1</sub>); C<sub>i</sub> = P<sub>i</sub> ⊕ O<sub>i</sub></td>
+                      <td>Có</td>
+                      <td><strong>Không lan truyền lỗi</strong></td>
+                      <td>Mã dòng đồng bộ. Dòng khóa O<sub>i</sub> có thể tính trước độc lập với bản rõ. Rất thích hợp cho truyền thông kênh nhiễu.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>CTR</strong> (Counter Mode)</td>
+                      <td>C<sub>i</sub> = P<sub>i</sub> ⊕ E<sub>K</sub>( Nonce ‖ i)</td>
+                      <td>Có (Nonce)</td>
+                      <td>Không lan truyền lỗi</td>
+                      <td><strong>Hiệu năng cao nhất:</strong> Có thể mã hóa và giải mã song song hoàn toàn; truy cập ngẫu nhiên khối bất kỳ.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2.5 Mã Dòng RC4 -->
+            <div class="theory-section">
+              <h3 class="section-heading">2.5. Mã Dòng & Thuật Toán RC4</h3>
+              <p>Mã dòng mã hóa từng bit hoặc byte dữ liệu bằng cách XOR với dòng khóa giả ngẫu nhiên sinh ra từ bộ sinh số (PRNG).</p>
+              <div class="formula-box">
+                <strong>Thuật toán RC4 (Ron Rivest):</strong> Sử dụng mảng hoán vị S kích thước N = 256 byte (S[0] ... S[255]).<br>
+                1. <em>Khởi tạo:</em> S[i] = i, mảng T[i] = K[i mod keylen].<br>
+                2. <em>Thuật toán xếp khóa KSA (Key-Scheduling Algorithm):</em><br>
+                j = 0; for i = 0 to 255: j = (j + S[i] + T[i]) mod 256; swap(S[i], S[j]);<br>
+                3. <em>Thuật toán sinh dòng khóa PRGA (Pseudo-Random Generation Algorithm):</em><br>
+                i = 0; j = 0;<br>
+                while generating byte:<br>
+                &nbsp;&nbsp;i = (i + 1) mod 256;<br>
+                &nbsp;&nbsp;j = (j + S[i]) mod 256;<br>
+                &nbsp;&nbsp;swap(S[i], S[j]);<br>
+                &nbsp;&nbsp;t = (S[i] + S[j]) mod 256;<br>
+                &nbsp;&nbsp;byte_khoa = S[t];
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== CHƯƠNG 3 ==================== -->
+        <div class="chapter-card" id="chapter-ch3">
+          <div class="chapter-header">
+            <div class="chapter-title-wrap">
+              <span class="chapter-badge badge-amber">CHƯƠNG 3</span>
+              <h2 class="chapter-title">Cơ Sở Toán Học & Hệ Mật Mã Khóa Công Khai (Bất Đối Xứng)</h2>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="filterPracticeByTopic('Hệ mật RSA & Chữ ký số')">
+              📝 Luyện trắc nghiệm Chương 3 ➔
+            </button>
+          </div>
+
+          <div class="chapter-content">
+            <!-- 3.1 Toán Modulo & Euclid Mở Rộng -->
+            <div class="theory-section">
+              <h3 class="section-heading">3.1. Cơ Sở Toán Học: Euclid Mở Rộng, Phi Euler & Thặng Dư</h3>
+              
+              <div class="theory-card-sub">
+                <h4>1. Thuật Toán Euclid Mở Rộng (Extended Euclidean Algorithm)</h4>
+                <p>Cho hai số nguyên dương a và b với a > b. Thuật toán tìm gcd(a, b) đồng thời tìm hai số nguyên x, y sao cho:</p>
+                <div class="formula-box">
+                  a · x + b · y = gcd(a, b)<br>
+                  - Nếu gcd(a, m) = 1, thì x = a<sup>-1</sup> mod m chính là <strong>phần tử nghịch đảo nhân của a theo modulo m</strong>.
+                </div>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>2. Hàm Phi Euler φ(n) & Định Lý Euler</h4>
+                <p>φ(n) là số lượng các số nguyên dương nhỏ hơn n và nguyên tố cùng nhau với n.</p>
+                <ul class="theory-bullets">
+                  <li>Nếu p là số nguyên tố: φ(p) = p - 1.</li>
+                  <li>Nếu n = p · q với p, q là số nguyên tố phân biệt: φ(n) = (p - 1)(q - 1).</li>
+                  <li>Nếu n = p<sup>k</sup>: φ(p<sup>k</sup>) = p<sup>k</sup> - p<sup>k-1</sup> = p<sup>k</sup>(1 - 1/p).</li>
+                  <li>Tính chất nhân: gcd(m, n) = 1 ⇒ φ(m · n) = φ(m) · φ(n).</li>
+                  <li><strong>Định lý Euler:</strong> Nếu gcd(a, n) = 1 thì a<sup>φ(n)</sup> ≡ 1 (mod n).</li>
+                  <li><strong>Định lý Fermat nhỏ:</strong> Nếu p nguyên tố và a không chia hết cho p thì a<sup>p-1</sup> ≡ 1 (mod p).</li>
+                </ul>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>3. Cấp Của Phần Tử & Phần Tử Sinh (Căn Nguyên Thủy)</h4>
+                <ul class="theory-bullets">
+                  <li><strong>Cấp của a modulo n:</strong> Là số nguyên dương k nhỏ nhất sao cho a<sup>k</sup> ≡ 1 (mod n). Cấp k luôn là ước của φ(n).</li>
+                  <li><strong>Phần tử sinh (Căn nguyên thủy):</strong> Phần tử α có cấp đúng bằng φ(n). Khi đó lũy thừa của α sinh ra toàn bộ nhóm nhân ℤ<sub>n</sub><sup>*</sup>.</li>
+                  <li>Nhóm ℤ<sub>n</sub><sup>*</sup> là nhóm cyclic khi và chỉ khi n ∈ {2, 4, p<sup>k</sup>, 2p<sup>k</sup>} với p là số nguyên tố lẻ.</li>
+                  <li><strong>Số lượng phần tử sinh:</strong> Nếu nhóm ℤ<sub>n</sub><sup>*</sup> có phần tử sinh thì số phần tử sinh đúng bằng mathbf{φ(φ(n))}.</li>
+                </ul>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>4. Thặng Dư Bậc Hai & Ký Hiệu Legendre / Jacobi</h4>
+                <p>Số a được gọi là <em>thặng dư bậc hai modulo p</em> (với gcd(a, p) = 1) nếu tồn tại x sao cho x<sup>2</sup> ≡ a (mod p).</p>
+                <div class="formula-box">
+                  <strong>Tiêu chuẩn Euler:</strong> Ký hiệu Legendre <b>(a / p) ≡ a<sup>(p-1)/2</sup> (mod p)</b>.<br>
+                  - (a / p) = 1 ⇔ a là thặng dư bậc hai modulo p.<br>
+                  - (a / p) = -1 ⇔ a là bất thặng dư bậc hai modulo p.<br>
+                  - (-1 / p) = 1 ⇔ p ≡ 1 (mod 4). (2 / p) = 1 ⇔ p ≡ 1 hoặc 7 (mod 8).
+                </div>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>5. Thuật Toán Nhân Bình Phương Có Lặp (Square-and-Multiply)</h4>
+                <p>Dùng để tính nhanh lũy thừa lớn <b>a<sup>b</sup> mod m</b> với độ phức tạp thời gian chỉ O(log b) thay vì O(b).</p>
+                <p>Biểu diễn số mũ b dưới dạng nhị phân b = (b<sub>k</sub> b<sub>k-1</sub> ... b<sub>0</sub>)<sub>2</sub>. Quét từ trái sang phải: gặp bit nào cũng bình phương (x = x<sup>2</sup> mod m); nếu bit = 1 thì nhân thêm a (x = x · a mod m).</p>
+              </div>
+            </div>
+
+            <!-- 3.2 Hệ Mật Mã Khóa Công Khai RSA -->
+            <div class="theory-section">
+              <h3 class="section-heading">3.2. Hệ Mật Mã RSA (Rivest - Shamir - Adleman)</h3>
+              <div class="formula-box">
+                <strong>1. Sinh khóa:</strong><br>
+                - Chọn hai số nguyên tố lớn p, q (p ≠ q).<br>
+                - Tính n = p · q và φ(n) = (p - 1)(q - 1).<br>
+                - Chọn số công khai e thỏa mãn: 1 &lt; e &lt; φ(n) và gcd(e, φ(n)) = 1.<br>
+                - Tính khóa bí mật d = e<sup>-1</sup> (mod φ(n)) (sao cho e · d ≡ 1 ((mod φ(n)))).<br>
+                - <strong>Khóa công khai (Public Key):</strong> K<sub>pub</sub> = (n, e).<br>
+                - <strong>Khóa bí mật (Private Key):</strong> K<sub>priv</sub> = (n, d) (hoặc chỉ cần lưu d).<br><br>
+                <strong>2. Mã hóa:</strong> Với bản rõ m &lt; n: c = m<sup>e</sup> mod n.<br>
+                <strong>3. Giải mã:</strong> Với bản mã c: m = c<sup>d</sup> mod n.
+              </div>
+              <ul class="theory-bullets">
+                <li><strong>Độ an toàn của RSA:</strong> Dựa trên độ khó của <em>Bài toán phân tích một hợp số lớn n thành tích các thừa số nguyên tố (p, q)</em>.</li>
+                <li><strong>Điểm bất động:</strong> Là các thông điệp m sao cho m<sup>e</sup> ≡ m mod n. Số điểm bất động bằng (1 + gcd(e-1, p-1)) × (1 + gcd(e-1, q-1)).</li>
+              </ul>
+            </div>
+
+            <!-- 3.3 Hệ Mật ElGamal, Rabin & Balo -->
+            <div class="theory-section">
+              <h3 class="section-heading">3.3. Các Hệ Mật Khóa Công Khai Khác: ElGamal, Rabin, Merkle-Hellman</h3>
+              
+              <div class="theory-card-sub">
+                <h4>Hệ Mật ElGamal</h4>
+                <p>Độ an toàn dựa trên độ khó của <strong>Bài toán Logarit rời rạc (DLP)</strong> trên nhóm nhân ℤ<sub>p</sub><sup>*</sup>.</p>
+                <div class="formula-box">
+                  - Số nguyên tố p, phần tử sinh α ∈ ℤ<sub>p</sub><sup>*</sup>.<br>
+                  - Khóa riêng: a ∈ {1 ... p-2}. Khóa công khai: (p, α, β = α<sup>a</sup> mod p).<br>
+                  - <em>Mã hóa bản rõ m:</em> Chọn số ngẫu nhiên k bí mật. Bản mã là cặp (y<sub>1</sub>, y<sub>2</sub>):<br>
+                  &nbsp;&nbsp;y<sub>1</sub> = α<sup>k</sup> mod p; &nbsp;&nbsp;y<sub>2</sub> = (m · β<sup>k</sup>) mod p.<br>
+                  - <em>Giải mã:</em> m = y<sub>2</sub> · (y<sub>1</sub><sup>a</sup>)<sup>-1</sup> mod p.
+                </div>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>Hệ Mật Rabin</h4>
+                <p>Độ an toàn tương đương với bài toán phân tích nhân tử modulo n = pq.</p>
+                <div class="formula-box">
+                  - Khóa công khai: n = p · q với p ≡ q ≡ 3 (mod 4). Khóa bí mật: (p, q).<br>
+                  - <em>Mã hóa:</em> c = m<sup>2</sup> mod n.<br>
+                  - <em>Giải mã:</em> Tính 4 căn bậc hai của c theo modulo n bằng định lý phần dư Trung Hoa (CRT).
+                </div>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>Hệ Mật Merkle - Hellman (Xếp Ba Lô)</h4>
+                <p>Dựa trên bài toán xếp ba lô (Knapsack - NP-đầy đủ). Sử dụng <strong>dãy siêu tăng</strong> (s<sub>1</sub>, ..., s<sub>n</sub>) trong đó s<sub>i</sub> > Σ<sub>j=1..i-1</sub> s<sub>j</sub>. Biến đổi dãy siêu tăng thành dãy thường bằng modulo m và số nhân w với gcd(w, m) = 1.</p>
+                <p>Giải mã đưa về giải bài toán ba lô trên dãy siêu tăng có độ phức tạp thuật toán là O(n) tuyến tính.</p>
+              </div>
+
+              <div class="theory-card-sub">
+                <h4>Mật Mã Đường Cong Elliptic (ECC)</h4>
+                <p>Phương trình Weierstrass trên trường hữu hạn ℤ<sub>p</sub> (p > 3):</p>
+                <div class="formula-box">
+                  <b>y<sup>2</sup> ≡ x<sup>3</sup> + a · x + b (mod p)</b> &nbsp;&nbsp;(Điều kiện: <b>4a<sup>3</sup> + 27b<sup>2</sup> ≢ 0 (mod p)</b>)<br>
+                  - Phép cộng 2 điểm P(x<sub>1</sub>, y<sub>1</sub>) + Q(x<sub>2</sub>, y<sub>2</sub>) = R(x<sub>3</sub>, y<sub>3</sub>): Hệ số góc λ = (y₂ - y₁) / (x₂ - x₁) mod p.<br>
+                  - Phép nhân đôi điểm 2P: Hệ số góc λ = (3x₁² + a) / (2y₁) mod p.<br>
+                  - Tọa độ điểm tổng: x<sub>3</sub> = (λ<sup>2</sup> - x<sub>1</sub> - x<sub>2</sub>) mod p; y<sub>3</sub> = (λ(x<sub>1</sub> - x<sub>3</sub>) - y<sub>1</sub>) mod p.
+                </div>
+                <p>👉 <strong>Ưu điểm vượt trội của ECC:</strong> Kích thước khóa nhỏ hơn rất nhiều so với RSA (ECC 256 bit an toàn tương đương RSA 3072 bit) → Tốc độ tính toán nhanh, tiết kiệm băng thông và bộ nhớ, rất phù hợp cho thiết bị di động, thẻ thông minh IoT.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== CHƯƠNG 4 ==================== -->
+        <div class="chapter-card" id="chapter-ch4">
+          <div class="chapter-header">
+            <div class="chapter-title-wrap">
+              <span class="chapter-badge badge-rose">CHƯƠNG 4</span>
+              <h2 class="chapter-title">Hàm Băm Mật Mã, Xác Thực Thông Điệp & Chữ Ký Số</h2>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="filterPracticeByTopic('Hàm băm & Toàn vẹn dữ liệu')">
+              📝 Luyện trắc nghiệm Chương 4 ➔
+            </button>
+          </div>
+
+          <div class="chapter-content">
+            <!-- 4.1 Hàm Băm Mật Mã -->
+            <div class="theory-section">
+              <h3 class="section-heading">4.1. Hàm Băm Mật Mã & 3 Tính Chất An Toàn Bắt Buộc</h3>
+              <p>Hàm băm mật mã h = H(M) chuyển thông điệp M có độ dài tùy ý thành giá trị băm h có <strong>độ dài cố định</strong>.</p>
+              
+              <div class="highlight-grid">
+                <div class="highlight-item">
+                  <div class="highlight-icon">1️⃣</div>
+                  <div>
+                    <strong>Kháng Tiền Ảnh (Preimage Resistance / Tính Một Chiều)</strong>
+                    <p>Cho trước giá trị băm h, về mặt tính toán <strong>không thể tìm được</strong> thông điệp M sao cho H(M) = h. Độ phức tạp: O(2<sup>n</sup>).</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">2️⃣</div>
+                  <div>
+                    <strong>Kháng Tiền Ảnh Thứ Hai (Second Preimage Resistance / Kháng Va Chạm Yếu)</strong>
+                    <p>Cho trước thông điệp M, về mặt tính toán <strong>không thể tìm được</strong> thông điệp M' ≠ M sao cho H(M') = H(M). Độ phức tạp: O(2<sup>n</sup>).</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">💥</div>
+                  <div>
+                    <strong>Kháng Va Chạm (Collision Resistance / Kháng Va Chạm Mạnh)</strong>
+                    <p>Về mặt tính toán <strong>không thể tìm được bất kỳ cặp (M, M')</strong> nào với M ≠ M' sao cho H(M) = H(M').</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exam-trap-box">
+                <div class="trap-title">⚠️ TẤN CÔNG NGÀY SINH NHẬT (BIRTHDAY ATTACK) VÀ ĐỘ AN TOÀN HÀM BĂM</div>
+                <p>Để tìm va chạm bất kỳ giữa 2 thông điệp bất kỳ (phá tính chất kháng va chạm mạnh) của hàm băm n-bit, theo nghịch lý ngày sinh nhật chỉ cần thực hiện xấp xỉ <strong>2<sup>n/2</sup></strong> phép thử (thay vì 2<sup>n</sup>).</p>
+                <p><em>Ví dụ:</em> Hàm băm MD5 có đầu ra 128 bit → Độ an toàn chống va chạm chỉ là 2<sup>64</sup> (đã bị phá vỡ hoàn toàn). SHA-256 có đầu ra 256 bit → Độ an toàn chống va chạm là 2<sup>128</sup>.</p>
+              </div>
+
+              <h4 style="margin-top: 1rem;">Cấu Trúc Lặp Merkle - Damgård:</h4>
+              <p>Hầu hết các hàm băm cổ điển (MD5, SHA-1, SHA-2) đều sử dụng mô hình Merkle-Damgård: Chia thông điệp thành các khối cố định, bổ sung độ dài (padding), và lặp qua hàm nén f với giá trị khởi tạo IV: H<sub>i</sub> = f(H<sub>i-1</sub>, M<sub>i</sub>).</p>
+            </div>
+
+            <!-- 4.2 Chữ Ký Số & Chứng Thư Số -->
+            <div class="theory-section">
+              <h3 class="section-heading">4.2. Chữ Ký Số & Hạ Tầng Khóa Công Khai (PKI / CA)</h3>
+              <p>Chữ ký số là cơ chế tương đương chữ ký tay trên môi trường số, cung cấp: <strong>Tính Xác Thực, Tính Toàn Vẹn và Tính Chống Chối Bỏ</strong>.</p>
+              
+              <div class="table-responsive">
+                <table class="comparative-table">
+                  <thead>
+                    <tr>
+                      <th>Sơ Đồ Chữ Ký Số</th>
+                      <th>Thủ Tục Tạo Chữ Ký (Người Gửi A)</th>
+                      <th>Thủ Tục Xác Minh Chữ Ký (Người Nhận B)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Chữ ký số RSA</strong></td>
+                      <td>Dùng <strong>khóa riêng d<sub>A</sub></strong> của A:<br>s = (H(m))<sup>d<sub>A</sub></sup> mod n<sub>A</sub></td>
+                      <td>Dùng <strong>khóa công khai e<sub>A</sub>, n<sub>A</sub></strong> của A:<br>Kiểm tra s<sup>e<sub>A</sub></sup> mod n<sub>A</sub> =? H(m).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Chữ ký số ElGamal</strong></td>
+                      <td>Chọn số ngẫu nhiên k với gcd(k, p-1) = 1. Khóa riêng a.<br>r = α<sup>k</sup> mod p<br>s = k<sup>-1</sup>(H(m) - a · r) mod (p-1)</td>
+                      <td>Dùng khóa công khai (α, β = α<sup>a</sup> mod p, p):<br>Kiểm tra β<sup>r</sup> · r<sup>s</sup> stackrel{?}{≡} α<sup>H(m)</sup> (mod p).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 style="margin-top: 1.25rem;">Hạ Tầng Khóa Công Khai (PKI) & Chứng Thư Số (Digital Certificate X.509):</h4>
+              <ul class="theory-bullets">
+                <li><strong>Mục đích:</strong> Liên kết danh tính của một thực thể (cá nhân, tổ chức, website) với một khóa công khai cụ thể để chống tấn công giả mạo khóa.</li>
+                <li><strong>Nhà cấp phát chứng thư số (CA - Certificate Authority):</strong> Bên thứ ba tin cậy có thẩm quyền xác minh danh tính và ký số lên chứng thư.</li>
+                <li><strong>Quy trình tạo chứng thư:</strong>
+                  <ol>
+                    <li>Thực thể tạo cặp khóa (K<sub>pub</sub>, K<sub>priv</sub>).</li>
+                    <li>Gửi yêu cầu chứng thư CSR (Certificate Signing Request) chứa K<sub>pub</sub> và thông tin thực thể tới CA.</li>
+                    <li>CA xác minh danh tính.</li>
+                    <li>CA dùng <strong>khóa bí mật của chính CA</strong> để ký số lên chứng thư số của thực thể.</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== CHƯƠNG 5 ==================== -->
+        <div class="chapter-card" id="chapter-ch5">
+          <div class="chapter-header">
+            <div class="chapter-title-wrap">
+              <span class="chapter-badge badge-blue">CHƯƠNG 5</span>
+              <h2 class="chapter-title">Quản Lý Khóa, Phân Phối Khóa & Thỏa Thuận Khóa</h2>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="filterPracticeByTopic('Hệ mật RSA & Chữ ký số')">
+              📝 Luyện trắc nghiệm Chương 5 ➔
+            </button>
+          </div>
+
+          <div class="chapter-content">
+            <!-- 5.1 Quản Trị Khóa & Sơ Đồ Blom -->
+            <div class="theory-section">
+              <h3 class="section-heading">5.1. Quản Trị Khóa Trong Mạng & Sơ Đồ Phân Phối Khóa Blom</h3>
+              <p>Trong mạng gồm n người dùng, nếu sử dụng mật mã đối xứng mà mỗi cặp người dùng cần một khóa riêng thì tổng số khóa cần tạo và quản lý là:</p>
+              <div class="formula-box">
+                N<sub>keys</sub> = (n(n - 1)) / (2) = O(n<sup>2</sup>)<br>
+                <em>Ví dụ:</em> Với 1000 người dùng, cần tới ≈ 500.000 khóa → Bùng nổ khóa, đòi hỏi phải có Trung tâm phân phối khóa (KDC) hoặc cơ chế thỏa thuận khóa công khai.
+              </div>
+
+              <h4 style="margin-top: 1rem;">Sơ Đồ Phân Phối Khóa Blom:</h4>
+              <p>Cho phép bất kỳ cặp người dùng (A, B) nào cũng có thể tính được một khóa bí mật chung K<sub>A,B</sub> = K<sub>B,A</sub> mà không cần trao đổi thông tin bí mật trực tiếp lúc đó.</p>
+              <ul class="theory-bullets">
+                <li>Sử dụng đa thức đối xứng hai biến bậc k: f(x, y) = f(y, x) trên trường hữu hạn ℤ<sub>p</sub>.</li>
+                <li>Mỗi người dùng A được gán một định danh công khai r<sub>A</sub>. Trung tâm phát cho A một đa thức một biến: g<sub>A</sub>(y) = f(r<sub>A</sub>, y).</li>
+                <li>Khi A muốn tạo khóa chung với B: A tính K<sub>A, B</sub> = g<sub>A</sub>(r<sub>B</sub>) = f(r<sub>A</sub>, r<sub>B</sub>).</li>
+                <li>B tính K<sub>B, A</sub> = g<sub>B</sub>(r<sub>A</sub>) = f(r<sub>B</sub>, r<sub>A</sub>) = f(r<sub>A</sub>, r<sub>B</sub>) = K<sub>A, B</sub>.</li>
+                <li><strong>Độ an toàn:</strong> Sơ đồ chống được liên minh tối đa k người dùng bắt tay nhau để tìm ra đa thức bí mật f(x, y).</li>
+              </ul>
+            </div>
+
+            <!-- 5.2 Giao Thức Trao Đổi Khóa Diffie - Hellman -->
+            <div class="theory-section">
+              <h3 class="section-heading">5.2. Giao Thức Thỏa Thuận Khóa Diffie - Hellman (DH)</h3>
+              <p>Giao thức trao đổi khóa Diffie - Hellman (1976) là phát minh đặt nền móng cho toàn bộ ngành mật mã khóa công khai hiện đại.</p>
+              
+              <div class="formula-box">
+                <strong>1. Thiết lập tham số công khai:</strong><br>
+                - Số nguyên tố lớn p và phần tử sinh α ∈ ℤ<sub>p</sub><sup>*</sup>. (Cả A và B đều biết).<br><br>
+                <strong>2. Các bước thỏa thuận khóa:</strong><br>
+                - <em>Bên A:</em> Chọn khóa riêng bí mật a ∈ ℤ<sub>p</sub><sup>*</sup>. Tính khóa công khai A = α<sup>a</sup> mod p và gửi A cho B qua mạng.<br>
+                - <em>Bên B:</em> Chọn khóa riêng bí mật b ∈ ℤ<sub>p</sub><sup>*</sup>. Tính khóa công khai B = α<sup>b</sup> mod p và gửi B cho A qua mạng.<br>
+                - <em>Tính khóa chung bí mật:</em><br>
+                &nbsp;&nbsp;+ A nhận B, tính: K = B<sup>a</sup> mod p = (α<sup>b</sup>)<sup>a</sup> mod p = α<sup>ab</sup> mod p.<br>
+                &nbsp;&nbsp;+ B nhận A, tính: K = A<sup>b</sup> mod p = (α<sup>a</sup>)<sup>b</sup> mod p = α<sup>ab</sup> mod p.
+              </div>
+
+              <div class="exam-trap-box">
+                <div class="trap-title">⚠️ TẤN CÔNG KẺ ĐỨNG GIỮA (MAN-IN-THE-MIDDLE) LÊN DIFFIE-HELLMAN</div>
+                <p>Giao thức Diffie - Hellman cơ bản <strong>không có cơ chế xác thực danh tính</strong>. Kẻ tấn công E đứng giữa đường truyền có thể chặn thông điệp và thỏa thuận khóa K<sub>AE</sub> riêng với A, đồng thời thỏa thuận khóa K<sub>EB</sub> riêng với B. Sau đó E giải mã và đọc lén mọi tin nhắn giữa A và B mà 2 bên không hề hay biết!</p>
+                <p>👉 <strong>Giải pháp khắc phục:</strong> Kết hợp Diffie - Hellman với <strong>Chữ ký số hoặc Chứng thư số (Station-to-Station protocol - STS)</strong>.</p>
+              </div>
+            </div>
+
+            <!-- 5.3 Hệ Thống Kerberos -->
+            <div class="theory-section">
+              <h3 class="section-heading">5.3. Hệ Phân Phối Khóa & Xác Thực Kerberos</h3>
+              <p>Kerberos là giao thức xác thực bên thứ ba tin cậy (KDC) được phát triển tại Viện MIT, sử dụng rộng rãi trong Active Directory của Windows.</p>
+              <ul class="theory-bullets">
+                <li><strong>Thành phần KDC (Key Distribution Center) gồm 2 máy chủ:</strong>
+                  <ol>
+                    <li><strong>AS (Authentication Server):</strong> Xác thực người dùng lần đầu và cấp vé nhận vé <em>TGT (Ticket-Granting Ticket)</em>.</li>
+                    <li><strong>TGS (Ticket-Granting Server):</strong> Kiểm tra TGT và cấp <em>Vé Dịch Vụ (Service Ticket)</em> cho tài nguyên cụ thể.</li>
+                  </ol>
+                </li>
+                <li><strong>Cơ chế bảo vệ:</strong> Sử dụng <strong>Nhãn thời gian (T × tamp)</strong> có thời hạn ngắn (vài phút) trong vé để triệt tiêu <strong>Tấn công phát lại (Replay Attack)</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== MA TRẬN ĐỀ THI ==================== -->
+        <div class="chapter-card" id="chapter-matran">
+          <div class="chapter-header">
+            <div class="chapter-title-wrap">
+              <span class="chapter-badge badge-emerald">ĐỀ CƯƠNG CHÍNH THỨC</span>
+              <h2 class="chapter-title">🎯 Ma Trận Đề Thi Môn Nhập Môn Mật Mã Học (40 Câu - 60 Phút)</h2>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="startQuickExam()">
+              ⏱️ Vào thi thử 40 câu chuẩn ➔
+            </button>
+          </div>
+
+          <div class="chapter-content">
+            <p style="margin-bottom: 1rem;">
+              Cấu trúc phân bổ 40 câu hỏi trắc nghiệm khách quan chuẩn bám sát đề cương chi tiết học phần Nhập môn Mật mã học (NMMMH) - Khoa An toàn thông tin:
+            </p>
+
+            <div class="table-responsive">
+              <table class="comparative-table">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Chuyên Đề & Nhóm Câu Hỏi</th>
+                    <th>Chuẩn Đầu Ra (CLO)</th>
+                    <th>Số Câu</th>
+                    <th>Dạng Bài Đặc Trưng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Kiến thức chung về các nguyên thủy mật mã</td><td>CLO1</td><td>3 câu</td><td>Định nghĩa hàm băm, mã dòng, mã khối, chữ ký số</td></tr>
+                  <tr><td>2</td><td>Nguyên tắc & cơ chế hoạt động của nguyên thủy mật mã</td><td>CLO1</td><td>2 câu</td><td>Nguyên lý Shannon, bài toán khó, phân biệt khóa công khai/bí mật</td></tr>
+                  <tr><td>3</td><td>Các hệ mật thay thế và hoán vị cổ điển</td><td>CLO2</td><td>2 câu</td><td>Số khóa, tính chất, giải mã Caesar, Affine, Vigenere, Hill</td></tr>
+                  <tr><td>4</td><td>Phân biệt kiến trúc SPN và Feistel</td><td>CLO1</td><td>2 câu</td><td>Sơ đồ khối, ưu nhược điểm, tính thuận nghịch hàm vòng</td></tr>
+                  <tr><td>5</td><td>Nguyên lý, cấu tạo của DES, nhược điểm và biến thể</td><td>CLO1</td><td>2 câu</td><td>Kích thước khối, khóa 56-bit, tính chất bù, sơ đồ 2DES/3DES</td></tr>
+                  <tr><td>6</td><td>Nguyên lý và cấu tạo của AES</td><td>CLO1</td><td>2 câu</td><td>128 bit, số vòng 10/12/14, SubBytes, ShiftRows, MixColumns</td></tr>
+                  <tr><td>7</td><td>Nguyên lý hoạt động của mã dòng</td><td>CLO2</td><td>1 câu</td><td>Sinh dòng khóa RC4 (KSA, PRGA), thanh ghi dịch LFSR</td></tr>
+                  <tr><td>8</td><td>Cơ sở toán học của mật mã</td><td>CLO1 & CLO2</td><td>4 câu</td><td>Nhân bình phương có lặp, Legendre/Jacobi, Euclid mở rộng</td></tr>
+                  <tr><td>9</td><td>Cấu trúc, tính chất của hàm băm & tấn công</td><td>CLO1</td><td>2 câu</td><td>Mô hình Merkle-Damgard, Birthday attack, 3 tính chất</td></tr>
+                  <tr><td>10</td><td>Hệ mật DES (tính toán)</td><td>CLO2</td><td>3 câu</td><td>Tra bảng S-box, hoán vị IP, mở rộng E, hàm f</td></tr>
+                  <tr><td>11</td><td>Hệ mật AES (tính toán SubBytes, ShiftRows, MixColumns, xtime)</td><td>CLO2</td><td>3 câu</td><td>Phép nhân xtime trên GF(2^8), tra bảng S-box, MixColumns</td></tr>
+                  <tr><td>12</td><td>Hệ mật RSA, ElGamal, Merkle Hellman, ECC</td><td>CLO1 & CLO2</td><td>5 câu</td><td>Tính khóa d trong RSA, mã hóa c, giải mã m, balo, cộng điểm ECC</td></tr>
+                  <tr><td>13</td><td>Lược đồ ký số RSA</td><td>CLO1 & CLO2</td><td>2 câu</td><td>Tạo chữ ký s = H(m)^d mod n, xác minh chữ ký</td></tr>
+                  <tr><td>14</td><td>Lược đồ ký số ElGamal</td><td>CLO1 & CLO2</td><td>2 câu</td><td>Cặp chữ ký (r, s), đẳng thức xác minh</td></tr>
+                  <tr><td>15</td><td>Phân phối và thỏa thuận khóa</td><td>CLO1 & CLO2</td><td>2 câu</td><td>Diffie-Hellman, sơ đồ Blom, hệ Kerberos AS/TGS</td></tr>
+                  <tr><td>16</td><td>Chế độ hoạt động của mã khối</td><td>CLO1</td><td>2 câu</td><td>Tính chất ECB, CBC, CFB, OFB, CTR, lan truyền lỗi</td></tr>
+                  <tr><td>17</td><td>Lựa chọn thuật toán mật mã trong thực tế</td><td>CLO1</td><td>1 câu</td><td>So sánh hiệu năng, độ an toàn AES vs RSA vs ECC</td></tr>
+                  <tr><td>18</td><td>Ứng dụng của hàm băm</td><td>CLO1</td><td>1 câu</td><td>Tính toàn vẹn, bảo vệ mật khẩu, MAC/HMAC</td></tr>
+                  <tr><td>19</td><td>Chứng thực khóa công khai & CA</td><td>CLO1</td><td>1 câu</td><td>Quy trình ký chứng thư, hạ tầng PKI X.509</td></tr>
+                  <tr><td>20</td><td>Lựa chọn tham số mật mã</td><td>CLO2</td><td>1 câu</td><td>Độ dài khóa khuyến nghị, an toàn chống thám mã</td></tr>
+                  <tr style="font-weight: 800; background: var(--bg-secondary);">
+                    <td colspan="3">TỔNG CỘNG ĐỀ THI CHÍNH THỨC</td>
+                    <td>40 câu</td>
+                    <td>Thời gian làm bài: 60 phút (Không dùng tài liệu)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- ==================== VIEW 2: PRACTICE MODE ==================== -->
+    <section id="view-practice" class="app-view">
+      <!-- Quick Type Filter Tabs -->
+      <div class="type-filter-bar">
+        <button class="type-pill-btn active" id="type-pill-all" onclick="setPracticeTypeFilter('all')">
+          ✨ Tất cả dạng bài (132 câu)
+        </button>
+        <button class="type-pill-btn" id="type-pill-theory" onclick="setPracticeTypeFilter('Lý thuyết')">
+          📖 1. Toàn bộ Lý thuyết (80 câu)
+        </button>
+        <button class="type-pill-btn" id="type-pill-exercise" onclick="setPracticeTypeFilter('Bài tập')">
+          🧮 2. Toàn bộ Bài tập tính toán (52 câu)
+        </button>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="practice-search-input" class="search-input" placeholder="Tìm nhanh trong bộ đề hiện tại..." oninput="onPracticeSearch(this.value)">
+        </div>
+
+        <select id="practice-type-select" class="select-filter" onchange="onPracticeFilterChange()">
+          <option value="all">Tất cả dạng bài (132 câu)</option>
+          <option value="Lý thuyết">📖 Chỉ câu hỏi Lý thuyết (80 câu)</option>
+          <option value="Bài tập">🧮 Chỉ câu hỏi Bài tập tính toán (52 câu)</option>
+        </select>
+
+        <select id="practice-exam-select" class="select-filter" onchange="onPracticeFilterChange()">
+          <option value="all">Tất cả bộ đề (132 câu)</option>
+          <option value="Đề 1">Bộ Đề 1 (40 câu chuẩn)</option>
+          <option value="Đề 2">Bộ Đề 2 (40 câu chuẩn)</option>
+          <option value="Đề 3">Bộ Đề 3 (40 câu chuẩn)</option>
+          <option value="Đề 4">Bộ Đề 4 (39 câu chuẩn)</option>
+          <option value="Đề Giữa Kỳ">Đề Thi Giữa Kỳ</option>
+          <option value="Đề Thi Mẫu">Đề Thi Mẫu KMA</option>
+        </select>
+
+        <select id="practice-topic-select" class="select-filter" onchange="onPracticeFilterChange()">
+          <option value="all">Tất cả chuyên đề</option>
+          <!-- Filled dynamically -->
+        </select>
+
+        <select id="practice-status-select" class="select-filter" onchange="onPracticeFilterChange()">
+          <option value="all">Tất cả trạng thái</option>
+          <option value="unanswered">Chưa làm</option>
+          <option value="incorrect">Đã làm sai</option>
+          <option value="correct">Đã làm đúng</option>
+          <option value="bookmarked">Đã đánh dấu sao ★</option>
+        </select>
+      </div>
+
+      <!-- Practice Main Grid -->
+      <div class="practice-container">
+        <!-- Question Display Card -->
+        <div class="question-panel">
+          <div class="q-header">
+            <div class="q-meta-badges">
+              <span class="exam-badge badge-blue" id="p-q-exam">Đề 1</span>
+              <span class="exam-badge badge-purple" id="p-q-topic">Hệ mật AES</span>
+              <span class="exam-badge badge-emerald" id="p-q-type">📖 Lý thuyết</span>
+              <span class="exam-badge badge-amber" id="p-q-diff">Cơ bản</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 0.5rem;" id="p-q-counter">Câu 1/132</span>
+            </div>
+            <div class="q-actions">
+              <button class="icon-btn" id="btn-bookmark" title="Đánh dấu câu hỏi này" onclick="toggleBookmarkCurrent()">
+                ★
+              </button>
+            </div>
+          </div>
+
+          <!-- Question Content -->
+          <div class="q-text" id="p-q-text">
+            Nội dung câu hỏi sẽ hiển thị ở đây...
+          </div>
+
+          <!-- Question Image if available -->
+          <div class="q-image-container" id="p-q-image-wrapper" style="display: none;">
+            <img src="" id="p-q-image" class="q-image" alt="Hình ảnh đề bài" onclick="openImageModal(this.src)">
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">(Bấm vào ảnh để phóng to toàn màn hình)</p>
+          </div>
+
+          <!-- Options List -->
+          <div class="options-list" id="p-options-container">
+            <!-- Rendered via JS -->
+          </div>
+
+          <!-- Explanation Box -->
+          <div class="explanation-card" id="p-explanation-box" style="display: none;">
+            <div class="exp-header">
+              <span>💡 Hướng dẫn & Lời giải chi tiết:</span>
+            </div>
+            <div class="exp-content" id="p-explanation-text">
+              Giải thích công thức và cách làm chi tiết...
+            </div>
+          </div>
+
+          <!-- Question Footer / Navigation -->
+          <div class="q-footer">
+            <div class="q-nav-buttons">
+              <button class="btn btn-secondary" onclick="prevPracticeQuestion()">
+                ◀ Câu trước
+              </button>
+              <button class="btn btn-secondary" onclick="nextPracticeQuestion()">
+                Câu tiếp theo ▶
+              </button>
+              <button class="btn btn-secondary" onclick="randomPracticeQuestion()" title="Chọn một câu ngẫu nhiên">
+                🎲 Ngẫu nhiên
+              </button>
+            </div>
+
+            <div>
+              <button class="btn btn-primary" id="btn-show-answer" onclick="revealCurrentAnswer()">
+                👁️ Hiện đáp án & Lời giải
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Matrix -->
+        <div class="sidebar-panel">
+          <div class="sidebar-title">
+            <span>Ma trận câu hỏi</span>
+            <span id="matrix-progress-text" style="font-size: 0.85rem; color: var(--primary);">0/132</span>
+          </div>
+
+          <div class="matrix-legend">
+            <div class="legend-item"><span class="legend-dot unanswered"></span> Chưa làm</div>
+            <div class="legend-item"><span class="legend-dot correct"></span> Đúng</div>
+            <div class="legend-item"><span class="legend-dot incorrect"></span> Sai</div>
+          </div>
+
+          <div class="question-matrix" id="practice-matrix">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: EXAM MODE ==================== -->
+    <section id="view-exam" class="app-view">
+      <!-- Exam Hub: displayed when not currently in an exam -->
+      <div id="exam-hub-container" class="exam-hub-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.35rem;">
+              ⏱️ Phòng Thi Thử Trắc Nghiệm Bấm Giờ
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Mô phỏng kỳ thi thật với đồng hồ đếm ngược, tự động ghi nhận câu sai và tính điểm chuẩn thang 10.
+            </p>
+          </div>
+        </div>
+
+        <div class="exam-modes-grid">
+          <!-- Option 1: General Exam -->
+          <div class="exam-mode-item" onclick="startQuickExam()">
+            <div>
+              <div class="exam-mode-top">
+                <div class="exam-mode-icon" style="color: #6366f1;">⚡</div>
+                <div>
+                  <span class="exam-badge badge-blue">Đề Chuẩn Tổng Hợp</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem;">Thi Thử Tổng Hợp 40 Câu</h3>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.75rem;">
+                40 câu trắc nghiệm ngẫu nhiên hỗn hợp cả Lý thuyết và Bài tập tính toán từ ngân hàng 132 câu hỏi.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">⏱️ 50 Phút | 40 Câu</span>
+              <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Bắt đầu thi ➔</button>
+            </div>
+          </div>
+
+          <!-- Option 2: Theory Exam -->
+          <div class="exam-mode-item" onclick="startExamByType('Lý thuyết', 40)">
+            <div>
+              <div class="exam-mode-top">
+                <div class="exam-mode-icon" style="color: #06b6d4;">📖</div>
+                <div>
+                  <span class="exam-badge badge-emerald">Chuyên Đề 1</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem;">Thi Chuyên Đề: Lý Thuyết</h3>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.75rem;">
+                40 câu trắc nghiệm chuyên sâu về khái niệm, định nghĩa, kiến trúc mạng Feistel/SPN, chế độ mã khối, hàm băm và chữ ký số.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">⏱️ 40 Phút | 40 Câu (trong 80 câu)</span>
+              <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Bắt đầu thi ➔</button>
+            </div>
+          </div>
+
+          <!-- Option 3: Exercise Exam -->
+          <div class="exam-mode-item" onclick="startExamByType('Bài tập', 40)">
+            <div>
+              <div class="exam-mode-top">
+                <div class="exam-mode-icon" style="color: #ec4899;">🧮</div>
+                <div>
+                  <span class="exam-badge badge-amber">Chuyên Đề 2</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem;">Thi Chuyên Đề: Bài Tập Tính Toán</h3>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.75rem;">
+                40 câu bài tập tính toán: Euclid mở rộng, RSA, Elgamal, Rabin, xtime GF(2^8), MixColumns, S-Box, Hill, Caesar, Elliptic.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">⏱️ 50 Phút | 40 Câu (trong 52 câu)</span>
+              <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Bắt đầu thi ➔</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">Hoặc chọn thi thử theo từng bộ đề cụ thể:</h4>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="startExamWithConfig('Đề 1', 40)">Đề 1 (40 câu)</button>
+            <button class="btn btn-secondary" onclick="startExamWithConfig('Đề 2', 40)">Đề 2 (40 câu)</button>
+            <button class="btn btn-secondary" onclick="startExamWithConfig('Đề 3', 40)">Đề 3 (40 câu)</button>
+            <button class="btn btn-secondary" onclick="startExamWithConfig('Đề 4', 39)">Đề 4 (39 câu)</button>
+            <button class="btn btn-secondary" onclick="startExamWithConfig('Đề Giữa Kỳ', 30)">Đề Giữa Kỳ</button>
+            <button class="btn btn-secondary" onclick="startExamWithConfig('Đề Thi Mẫu', 30)">Đề Mẫu KMA</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Exam Area: displayed when exam is running -->
+      <div id="exam-active-container" style="display: none;">
+        <!-- Exam Sticky Bar -->
+        <div class="exam-sticky-bar">
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 700;" id="exam-title-display">Thi Thử Bấm Giờ: Đề 40 Câu Chuẩn</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);" id="exam-progress-summary">Đã hoàn thành: 0 / 40 câu</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="exam-timer" id="exam-timer-display">
+              ⏱️ <span id="timer-text">50:00</span>
+            </div>
+            <button class="btn btn-secondary" onclick="exitExamPrompt()" title="Thoát bài thi hiện tại để chọn đề khác">
+              ✕ Thoát
+            </button>
+            <button class="btn btn-primary" onclick="promptSubmitExam()">
+              📝 Nộp bài thi
+            </button>
+          </div>
+        </div>
+
+        <div class="practice-container">
+          <!-- Exam Question Panel -->
+          <div class="question-panel">
+            <div class="q-header">
+              <div class="q-meta-badges">
+                <span class="exam-badge badge-blue" id="e-q-badge">Câu 1/40</span>
+                <span class="exam-badge badge-purple" id="e-q-topic">Chuyên đề</span>
+                <span class="exam-badge badge-emerald" id="e-q-type">Lý thuyết</span>
+              </div>
+              <div class="q-actions">
+                <button class="icon-btn" id="e-btn-flag" title="Đánh dấu câu này để xem lại trước khi nộp bài" onclick="toggleExamFlagCurrent()">
+                  🚩
+                </button>
+              </div>
+            </div>
+
+            <div class="q-text" id="e-q-text">
+              Nội dung câu hỏi thi...
+            </div>
+
+            <div class="q-image-container" id="e-q-image-wrapper" style="display: none;">
+              <img src="" id="e-q-image" class="q-image" alt="Hình ảnh đề bài" onclick="openImageModal(this.src)">
+            </div>
+
+            <div class="options-list" id="e-options-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="q-footer">
+              <div class="q-nav-buttons">
+                <button class="btn btn-secondary" onclick="prevExamQuestion()">
+                  ◀ Câu trước
+                </button>
+                <button class="btn btn-secondary" onclick="nextExamQuestion()">
+                  Câu tiếp theo ▶
+                </button>
+              </div>
+              <button class="btn btn-danger" onclick="promptSubmitExam()">
+                Nộp bài thi ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- Exam Sidebar Matrix -->
+          <div class="sidebar-panel">
+            <div class="sidebar-title">
+              <span id="exam-matrix-title">Danh sách câu thi</span>
+              <span id="exam-answered-count" style="font-size: 0.85rem; color: var(--primary);">0/40</span>
+            </div>
+            <div class="matrix-legend">
+              <div class="legend-item"><span class="legend-dot unanswered"></span> Chưa chọn</div>
+              <div class="legend-item"><span class="legend-dot answered"></span> Đã chọn</div>
+            </div>
+            <div class="question-matrix" id="exam-matrix">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 4: MISTAKES REVIEW ==================== -->
+    <section id="view-mistakes" class="app-view">
+      <div class="hero-banner" style="padding: 1.8rem; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">⚠️ Sổ Tay Các Câu Hay Làm Sai</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          Hệ thống tự động ghi lại các câu bạn từng trả lời sai trong lúc thi hoặc ôn luyện. Hãy làm lại từng câu cho đến khi hiểu rõ bản chất lý thuyết và công thức!
+        </p>
+        <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" onclick="practiceAllMistakes()">
+            🔁 Luyện tập toàn bộ câu sai
+          </button>
+          <button class="btn btn-secondary" onclick="clearMistakesHistory()">
+            🗑️ Xóa sạch danh sách sai
+          </button>
+        </div>
+      </div>
+
+      <div id="mistakes-list-container" style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 5: SEARCH & KNOWLEDGE BASE ==================== -->
+    <section id="view-search" class="app-view">
+      <div class="section-header">
+        <h2 class="section-title">🔍 Tra cứu nhanh ngân hàng 132 câu hỏi NMMMH</h2>
+      </div>
+
+      <div class="type-filter-bar">
+        <button class="type-pill-btn active" id="search-pill-all" onclick="setSearchTypeFilter('all')">
+          Tất cả (132 câu)
+        </button>
+        <button class="type-pill-btn" id="search-pill-theory" onclick="setSearchTypeFilter('Lý thuyết')">
+          📖 Chỉ Lý thuyết (80 câu)
+        </button>
+        <button class="type-pill-btn" id="search-pill-exercise" onclick="setSearchTypeFilter('Bài tập')">
+          🧮 Chỉ Bài tập tính toán (52 câu)
+        </button>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-input-wrapper" style="min-width: 320px;">
+          <span class="search-icon">🔎</span>
+          <input type="text" id="global-search-input" class="search-input" placeholder="Nhập từ khóa (ví dụ: AES, RSA, RC4, S-box, Euclide, MixColumns, thặng dư, xtime, elip...)" oninput="onGlobalSearch(this.value)">
+        </div>
+      </div>
+
+      <div id="search-results-summary" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Hiển thị 132 câu hỏi trong ngân hàng dữ liệu
+      </div>
+
+      <div id="search-results-list" style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODALS ==================== -->
+  <!-- Image Zoom Modal -->
+  <div class="modal-overlay" id="image-modal" onclick="closeImageModal()">
+    <div style="max-width: 90vw; max-height: 90vh;">
+      <img id="image-modal-img" src="" style="max-width: 100%; max-height: 85vh; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);" alt="Phóng to ảnh">
+    </div>
+  </div>
+
+  <!-- Submit Exam Confirmation Modal -->
+  <div class="modal-overlay" id="confirm-submit-modal">
+    <div class="modal-dialog">
+      <div class="modal-icon-badge warning">⚠️</div>
+      <h3 class="modal-title">Xác nhận nộp bài thi?</h3>
+      <p class="modal-desc" id="confirm-modal-desc">
+        Bạn đã làm được 35/40 câu. Còn 5 câu chưa trả lời. Bạn có chắc chắn muốn nộp bài để chấm điểm ngay?
+      </p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeSubmitModal()">
+          Làm bài tiếp
+        </button>
+        <button class="btn btn-primary" onclick="finalizeExamSubmission()">
+          Nộp bài ngay
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam Results Report Modal -->
+  <div class="modal-overlay" id="exam-result-modal">
+    <div class="modal-dialog" style="max-width: 640px;">
+      <div class="modal-icon-badge success" id="result-badge-icon">🏆</div>
+      <h3 class="modal-title" id="result-title">Kết Quả Bài Thi Thử</h3>
+      <p class="modal-desc" id="result-subtitle">Đề thi 40 câu trắc nghiệm Nhập môn Mật mã học</p>
+
+      <div class="score-display">
+        <span class="score-number" id="result-score">8.5</span>
+        <span class="score-max">/ 10 điểm</span>
+      </div>
+
+      <div class="score-breakdown">
+        <div class="breakdown-item correct">
+          <h4 id="result-correct-count">34</h4>
+          <p>Câu đúng</p>
+        </div>
+        <div class="breakdown-item incorrect">
+          <h4 id="result-incorrect-count">5</h4>
+          <p>Câu sai</p>
+        </div>
+        <div class="breakdown-item skipped">
+          <h4 id="result-skipped-count">1</h4>
+          <p>Chưa làm</p>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeResultModalAndReview()">
+          🔍 Xem lại bài làm có lời giải
+        </button>
+        <button class="btn btn-primary" onclick="restartExamSameSettings()">
+          🔄 Làm lại đề này
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="questions_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
